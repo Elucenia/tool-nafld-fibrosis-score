@@ -1,0 +1,90 @@
+[
+  {
+    "label": "40 anos, IMC 25, sem DM, AST 25, ALT 50, plaquetas 300, albumina 4,5: −4,220 (improvável)",
+    "input": {
+      "idade": 40,
+      "imc": 25,
+      "dm": "0",
+      "ast": 25,
+      "alt": 50,
+      "plq": 300,
+      "alb": 4.5
+    },
+    "expected": {
+      "raw": {
+        "nfs": -4.22
+      },
+      "level": "low",
+      "tol": 0.001
+    },
+    "originalInput": {
+      "idade": 40,
+      "imc": 25,
+      "dm": "0",
+      "ast": 25,
+      "alt": 50,
+      "plq": 300,
+      "alb": 4.5
+    },
+    "expandedZeroOptions": []
+  },
+  {
+    "label": "50 anos, IMC 30, DM, AST 40, ALT 50, plaquetas 200, albumina 4,0: −0,323 (indeterminado)",
+    "input": {
+      "idade": 50,
+      "imc": 30,
+      "dm": "1",
+      "ast": 40,
+      "alt": 50,
+      "plq": 200,
+      "alb": 4
+    },
+    "expected": {
+      "raw": {
+        "nfs": -0.323
+      },
+      "main": "-0,323",
+      "level": "mid",
+      "tol": 0.001
+    },
+    "originalInput": {
+      "idade": 50,
+      "imc": 30,
+      "dm": "1",
+      "ast": 40,
+      "alt": 50,
+      "plq": 200,
+      "alb": 4
+    },
+    "expandedZeroOptions": []
+  },
+  {
+    "label": "65 anos, IMC 35, DM, AST 60, ALT 40, plaquetas 120, albumina 3,5: 2,765 (provável)",
+    "input": {
+      "idade": 65,
+      "imc": 35,
+      "dm": "1",
+      "ast": 60,
+      "alt": 40,
+      "plq": 120,
+      "alb": 3.5
+    },
+    "expected": {
+      "raw": {
+        "nfs": 2.765
+      },
+      "level": "high",
+      "tol": 0.001
+    },
+    "originalInput": {
+      "idade": 65,
+      "imc": 35,
+      "dm": "1",
+      "ast": 60,
+      "alt": 40,
+      "plq": 120,
+      "alb": 3.5
+    },
+    "expandedZeroOptions": []
+  }
+]

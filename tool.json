@@ -1,0 +1,227 @@
+{
+  "tool": {
+    "id": "nafld-fibrosis-score",
+    "title": "NAFLD Fibrosis Score (NFS)",
+    "short": "Fibrose avançada na esteatose hepática",
+    "desc": "Calcule o NAFLD Fibrosis Score: idade, IMC, glicemia alterada ou diabetes, AST/ALT, plaquetas e albumina para estimar fibrose avançada na esteatose.",
+    "lead": "Escore não invasivo desenvolvido para a doença hepática gordurosa não alcoólica (hoje MASLD) que separa pacientes com baixa e alta probabilidade de fibrose avançada (F3–F4).",
+    "spec": [
+      "gastroenterologia",
+      "endocrinologia-e-metabologia",
+      "clinica-medica"
+    ],
+    "fields": [
+      [
+        "idade",
+        "Idade",
+        "num",
+        {
+          "min": 18,
+          "max": 100,
+          "unit": "anos",
+          "ph": "50"
+        }
+      ],
+      [
+        "imc",
+        "IMC",
+        "num",
+        {
+          "min": 12,
+          "max": 80,
+          "step": 0.1,
+          "unit": "kg/m²",
+          "ph": "30"
+        }
+      ],
+      [
+        "dm",
+        "Glicemia de jejum alterada ou diabetes",
+        "radio",
+        {
+          "opts": {
+            "0": "Não",
+            "1": "Sim"
+          }
+        }
+      ],
+      [
+        "ast",
+        "AST (TGO)",
+        "num",
+        {
+          "min": 1,
+          "max": 5000,
+          "unit": "U/L",
+          "ph": "40"
+        }
+      ],
+      [
+        "alt",
+        "ALT (TGP)",
+        "num",
+        {
+          "min": 1,
+          "max": 5000,
+          "unit": "U/L",
+          "ph": "50"
+        }
+      ],
+      [
+        "plq",
+        "Plaquetas",
+        "num",
+        {
+          "min": 5,
+          "max": 1500,
+          "unit": "× 10³/mm³",
+          "ph": "200"
+        }
+      ],
+      [
+        "alb",
+        "Albumina",
+        "num",
+        {
+          "min": 1,
+          "max": 6,
+          "step": 0.1,
+          "unit": "g/dL",
+          "ph": "4,0"
+        }
+      ]
+    ],
+    "formula": "<p>NFS = −1,675 + 0,037 × idade + 0,094 × IMC + 1,13 × (glicemia alterada/diabetes: 1) + 0,99 × AST/ALT − 0,013 × plaquetas (10⁹/L) − 0,66 × albumina (g/dL).</p>",
+    "table": [
+      [
+        "NFS",
+        "Interpretação"
+      ],
+      [
+        "&lt; −1,455",
+        "Fibrose avançada improvável (VPN 93% na derivação)"
+      ],
+      [
+        "−1,455 a 0,676",
+        "Indeterminado"
+      ],
+      [
+        "&gt; 0,676",
+        "Fibrose avançada provável (VPP 90% na derivação)"
+      ]
+    ],
+    "table_note": "A partir de 65 anos, o corte inferior proposto é 0,12 (McPherson 2017).",
+    "tips": [
+      "Na faixa indeterminada, complemente com elastografia hepática (transitória ou por ressonância).",
+      "O IMC entra na fórmula: obesidade grave tende a elevar o escore sem fibrose proporcional.",
+      "Albumina baixa por desnutrição, síndrome nefrótica ou inflamação aumenta o NFS independentemente do fígado.",
+      "Na prática, o FIB-4 é o primeiro passo mais usado; o NFS é alternativa com desempenho semelhante acima de 35 anos."
+    ],
+    "sources": [
+      [
+        "Angulo P et al. The NAFLD fibrosis score: a noninvasive system that identifies liver fibrosis in patients with NAFLD. Hepatology, 2007.",
+        "https://doi.org/10.1002/hep.21496"
+      ],
+      [
+        "McPherson S et al. Age as a confounding factor for the accurate non-invasive diagnosis of advanced NAFLD fibrosis. Am J Gastroenterol, 2017.",
+        "https://doi.org/10.1038/ajg.2016.453"
+      ],
+      [
+        "Rinella ME et al. AASLD Practice Guidance on the clinical assessment and management of nonalcoholic fatty liver disease. Hepatology, 2023.",
+        "https://doi.org/10.1097/HEP.0000000000000323"
+      ]
+    ],
+    "cases": [
+      [
+        "40 anos, IMC 25, sem DM, AST 25, ALT 50, plaquetas 300, albumina 4,5: −4,220 (improvável)",
+        {
+          "idade": 40,
+          "imc": 25,
+          "dm": "0",
+          "ast": 25,
+          "alt": 50,
+          "plq": 300,
+          "alb": 4.5
+        },
+        {
+          "raw": {
+            "nfs": -4.22
+          },
+          "level": "low",
+          "tol": 0.001
+        }
+      ],
+      [
+        "50 anos, IMC 30, DM, AST 40, ALT 50, plaquetas 200, albumina 4,0: −0,323 (indeterminado)",
+        {
+          "idade": 50,
+          "imc": 30,
+          "dm": "1",
+          "ast": 40,
+          "alt": 50,
+          "plq": 200,
+          "alb": 4
+        },
+        {
+          "raw": {
+            "nfs": -0.323
+          },
+          "main": "-0,323",
+          "level": "mid",
+          "tol": 0.001
+        }
+      ],
+      [
+        "65 anos, IMC 35, DM, AST 60, ALT 40, plaquetas 120, albumina 3,5: 2,765 (provável)",
+        {
+          "idade": 65,
+          "imc": 35,
+          "dm": "1",
+          "ast": 60,
+          "alt": 40,
+          "plq": 120,
+          "alb": 3.5
+        },
+        {
+          "raw": {
+            "nfs": 2.765
+          },
+          "level": "high",
+          "tol": 0.001
+        }
+      ]
+    ],
+    "batch": "renal-digestivo",
+    "kind": "Calculadora",
+    "config": null,
+    "areaId": "renal-digestivo",
+    "clinicalReview": "pending",
+    "sourceReview": "pending",
+    "sourceFile": "app/content/ferramentas/renal-digestivo.php",
+    "arithmeticTest": {
+      "status": "passed",
+      "testedAt": "2026-09-25",
+      "total": 3,
+      "passed": 3,
+      "failures": []
+    },
+    "independentArithmeticTest": {
+      "status": "not-tested",
+      "testedAt": null,
+      "total": 0,
+      "passed": 0,
+      "cases": []
+    }
+  },
+  "review": {
+    "status": "needs-review",
+    "reason": "Revisão documental e clínica independente pendente.",
+    "clinicalValidation": "not-performed"
+  },
+  "sourceFile": {
+    "path": "app/content/ferramentas/renal-digestivo.php",
+    "sha256": "95087d729438637d36e1a49af04d8de0fe1d9f7876443084443906a9281ef107",
+    "bytes": 109421
+  },
+  "clinicalValidation": "not-performed"
+}
