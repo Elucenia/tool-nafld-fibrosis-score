@@ -1,11 +1,11 @@
-/* tool-nafld-fibrosis-score · Elucenia · https://github.com/Elucenia/tool-nafld-fibrosis-score
-   Copyright (c) 2026 Elucenia · Felipe Guedes (fgxdev.com). Licensed under the Apache License 2.0: keep this notice and the NOTICE file, and mark your changes.
+/* tool-nafld-fibrosis-score · ELUCENIA · https://github.com/Elucenia/tool-nafld-fibrosis-score
+   Copyright (c) 2026 ELUCENIA · Felipe Guedes (fgxdev.com). Licensed under the Apache License 2.0: keep this notice and the NOTICE file, and mark your changes.
    Standalone integration. Package metadata and rights: README.md. */
 (function(root){'use strict';
 function freeze(value){if(value&&typeof value==='object'){for(const item of Object.values(value))freeze(item);Object.freeze(value);}return value;}
 const TOOL=freeze({"id":"nafld-fibrosis-score","title":"NAFLD Fibrosis Score (NFS)","fields":[["idade","Idade","num",{"min":18,"max":100,"unit":"anos","ph":"50"}],["imc","IMC","num",{"min":12,"max":80,"step":0.1,"unit":"kg/m²","ph":"30"}],["dm","Glicemia de jejum alterada ou diabetes","radio",{"opts":{"0":"Não","1":"Sim"}}],["ast","AST (TGO)","num",{"min":1,"max":5000,"unit":"U/L","ph":"40"}],["alt","ALT (TGP)","num",{"min":1,"max":5000,"unit":"U/L","ph":"50"}],["plq","Plaquetas","num",{"min":5,"max":1500,"unit":"× 10³/mm³","ph":"200"}],["alb","Albumina","num",{"min":1,"max":6,"step":0.1,"unit":"g/dL","ph":"4,0"}]],"config":null,"reviewStatus":"needs-review","clinicalValidation":"not-performed"});
 const window={};
-/* Elucenia arithmetic registry. No DOM access, storage, telemetry or network requests. */
+/* ELUCENIA arithmetic registry. No DOM access, storage, telemetry or network requests. */
 (function(root){
   'use strict';
   const CALC={fn:Object.create(null)};

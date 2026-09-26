@@ -1,7 +1,7 @@
 {
   "name": "@elucenia/tool-nafld-fibrosis-score",
   "version": "0.1.0",
-  "description": "NAFLD Fibrosis Score (NFS) · Elucenia: reprodução técnica de fórmula ou escore clínico, sem dependências, para navegador e Node.js.",
+  "description": "NAFLD Fibrosis Score (NFS) · ELUCENIA: reprodução técnica de fórmula ou escore clínico, sem dependências, para navegador e Node.js.",
   "keywords": [
     "elucenia",
     "medical-calculator",
