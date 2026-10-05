@@ -5,6 +5,7 @@
     "short": "Fibrose avançada na esteatose hepática",
     "desc": "Calcule o NAFLD Fibrosis Score: idade, IMC, glicemia alterada ou diabetes, AST/ALT, plaquetas e albumina para estimar fibrose avançada na esteatose.",
     "lead": "Escore não invasivo desenvolvido para a doença hepática gordurosa não alcoólica (hoje MASLD) que separa pacientes com baixa e alta probabilidade de fibrose avançada (F3–F4).",
+    "kind": "Calculadora",
     "spec": [
       "gastroenterologia",
       "endocrinologia-e-metabologia",
@@ -92,31 +93,6 @@
       ]
     ],
     "formula": "<p>NFS = −1,675 + 0,037 × idade + 0,094 × IMC + 1,13 × (glicemia alterada/diabetes: 1) + 0,99 × AST/ALT − 0,013 × plaquetas (10⁹/L) − 0,66 × albumina (g/dL).</p>",
-    "table": [
-      [
-        "NFS",
-        "Interpretação"
-      ],
-      [
-        "&lt; −1,455",
-        "Fibrose avançada improvável (VPN 93% na derivação)"
-      ],
-      [
-        "−1,455 a 0,676",
-        "Indeterminado"
-      ],
-      [
-        "&gt; 0,676",
-        "Fibrose avançada provável (VPP 90% na derivação)"
-      ]
-    ],
-    "table_note": "A partir de 65 anos, o corte inferior proposto é 0,12 (McPherson 2017).",
-    "tips": [
-      "Na faixa indeterminada, complemente com elastografia hepática (transitória ou por ressonância).",
-      "O IMC entra na fórmula: obesidade grave tende a elevar o escore sem fibrose proporcional.",
-      "Albumina baixa por desnutrição, síndrome nefrótica ou inflamação aumenta o NFS independentemente do fígado.",
-      "Na prática, o FIB-4 é o primeiro passo mais usado; o NFS é alternativa com desempenho semelhante acima de 35 anos."
-    ],
     "sources": [
       [
         "Angulo P et al. The NAFLD fibrosis score: a noninvasive system that identifies liver fibrosis in patients with NAFLD. Hepatology, 2007.",
@@ -191,9 +167,6 @@
         }
       ]
     ],
-    "kind": "Calculadora",
-    "config": null,
-    "clinicalReview": "pending",
     "arithmeticTest": {
       "status": "passed",
       "testedAt": "2026-09-25",
@@ -202,17 +175,622 @@
       "failures": []
     },
     "independentArithmeticTest": {
-      "status": "not-tested",
-      "testedAt": null,
-      "total": 0,
-      "passed": 0,
-      "cases": []
+      "status": "passed",
+      "testedAt": "2026-10-04T17:07:59.712Z",
+      "total": 166,
+      "passed": 166,
+      "sourceRowCount": 166,
+      "uniqueApiInputCount": 165,
+      "sourceContextCount": 166,
+      "embeddedCasesAreSubset": true,
+      "embeddedCaseCount": 4,
+      "caseStorage": {
+        "mode": "complete-downloadable-bank-with-inline-subset",
+        "file": "independent-source-cases.json",
+        "sha256": "d030d06c9d8abbec3c012c8167c42b33aee6c8c6555af40d710a8ac05729499f",
+        "total": 166,
+        "bankRowCount": 166,
+        "uniqueApiInputCount": 165,
+        "sourceContextCount": 166,
+        "expectedEvidence": [
+          {
+            "file": "reports/review-20261003/nfs-bank-independent-expectations-publication-final26.json",
+            "sha256": "107612e74eaf60cb0d1c8a9fc7b0ef3bc1c2afa870849593611ca8f1d32d96c4"
+          },
+          {
+            "file": "nafld-nfs-independent-oracle-final26.json",
+            "sha256": "66a453c55b474999383eb541256005b576ab9bce2be0e057e4fd1c7dc3129eba",
+            "preparedBeforeRootImplementationImports": true
+          }
+        ],
+        "obtainedEvidence": {
+          "file": "reports/review-20261003/nfs-bank-independent-check-publication-final26-r3.json",
+          "sha256": "4f3cdd34a95bb1395fba55e159209ec4616db315321967f4c0374c75b2559142"
+        },
+        "packagingRequirement": "Freeze source V2 plus reviewed metadata composition before fresh26 package generation; bank replay does not expose private registry categories."
+      },
+      "inputIdentity": {
+        "definition": "Distinct JSON input objects within each method after recursively sorting object keys; array order, numeric values and JSON value types preserved. Uses stored input/inputs before implicit default completion, numeric coercion or clinical feature interpretation. Identity across different methods is not collapsed. Repeated scenarios are retained and coverage status is unchanged.",
+        "sourceRows": 166,
+        "uniqueApiInputs": 165,
+        "duplicateRows": 1,
+        "duplicates": [
+          {
+            "index": 45,
+            "sameStoredInputAsIndex": 1
+          }
+        ],
+        "expectationAudit": {
+          "file": "reports/review-20261003/nfs-bank-independent-expectations-publication-final26.json",
+          "sha256": "107612e74eaf60cb0d1c8a9fc7b0ef3bc1c2afa870849593611ca8f1d32d96c4"
+        }
+      },
+      "scope": "166 retained exact canonical-decimal source formula scenarios (165 distinct stored input objects, one repeated scenario), correctly rounded nearest IEEE754 binary64 raw.nfs bits and three-decimal main only in the exported API. Exact strict source cutoff codes are proven in separate four-engine registry evidence, not asserted as visible/API-exposed. Lower0.12 at age>=65 is declared implementation policy; primary-source overlap at exact35/65 remains clinically unadjudicated. No fibrosis diagnosis, population transportability, treatment advice or full-method approval.",
+      "sources": [
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/17393509/",
+          "doi": "10.1002/hep.21496",
+          "edition": "Angulo et al. Hepatology2007;45(4):846–854",
+          "ownRead": "Abstract, bibliographic metadata and original733biopsyconfirmedNAFLD derivation/validation480/253, six variables and two thresholds. No claim original full article obtained.",
+          "limitations": "DOI/publisher full-text inaccessible in this review; coefficients independently cross-checked in posterior primary Table1, not by claiming original full-text read."
+        },
+        {
+          "url": "https://eprints.ncl.ac.uk/229450",
+          "doi": "10.1038/ajg.2016.453",
+          "edition": "McPherson et al. American Journal of Gastroenterology2017;112(5):740–751; online2016",
+          "ownRead": "Published PDF downloaded from public author repository,13pages. Personally read Table1 formula/units, associated methods on PDFpage3, Table4 older≥65 cutoff/performance and study limitations on PDFpage10, Figure4/caption and conclusions on PDFpage11; three rendered page images personally viewed. Not a claim full13page article review.",
+          "specificFindings": [
+            "Table1 six decimal coefficients, AST/ALT, original strict lower<−1.455 and upper>0.676; equality is between the cutoffs.",
+            "Table4 and Figure4 proposed lower0.12 in older≥65 group; upper0.676 unchanged.",
+            "Figure4 displays≤35,36–65,≥65; caption says<35 and35–65,≥65. Exact35/65 interpretation documented as primary-source ambiguity and not clinically adjudicated.",
+            "European specialist biopsy-confirmedNAFLD cohort; other hepatopathies and excessive alcohol excluded. Population applicability and imperfect diagnostic performance not replaced by arithmetic tests.",
+            "Platelet units10^9/L equal10^3/mm^3 numerically; albuming/dL."
+          ],
+          "licenseObserved": "CC BY-NC-SA4.0 for the published article at the author repository; does not itself approve implementation/package rights.",
+          "limitations": "PMC access was CAPTCHA; author repository alternate public PDF was used without circumventing an access control."
+        }
+      ],
+      "evidencePath": "reports/review-20261003/nfs-bank-independent-check-publication-final26-r3.json",
+      "evidenceSha256": "4f3cdd34a95bb1395fba55e159209ec4616db315321967f4c0374c75b2559142",
+      "originalEvidence": {
+        "file": "reports/review-20261003/nafld-nfs-source-before-check-final26.json",
+        "sha256": "c629b06817a84c9119f96cbfa80b178dbd05850682b62130bfde244cb0a139f2"
+      },
+      "registryClassificationProof": {
+        "file": "reports/review-20261003/nafld-nfs-nearest-rational-independent-peer-final26-v2.json",
+        "sha256": "78074cdc0328f1013ce73b60db06563efb7ce7c714bdfacc677dd09353ee600b",
+        "expected166CodesCovered": true,
+        "visibleApiClassification": "not-exposed",
+        "clinicalAgeBoundaryAdjudication": "not-performed"
+      },
+      "independentPeer": {
+        "status": "passed",
+        "requiredScope": "Bank/evidence/helper metadata peer; registry source proof is separately completed and does not approve clinical use.",
+        "recordedAt": "2026-10-04T18:58:12.326Z",
+        "scope": "Existing independent technical complete-bank/metadata/helper peer recorded after guarded source26 application. This status does not certify clinical eligibility, full instrument conformance, professional translation or source rights; no new arithmetic/browser execution is claimed by this metadata amendment.",
+        "previousStatus": {
+          "status": "pending",
+          "requiredScope": "Bank/evidence/helper metadata peer; registry source proof is separately completed and does not approve clinical use."
+        },
+        "peer": {
+          "file": "reports/review-20261003/nfs-source-bank-root-peer-final26-r3.json",
+          "sha256": "4477f3a6fde2a8227cb745a2043d5e9466f1146c52ada0c8ad3ae1befb91d09a",
+          "summary": {
+            "checks": 547,
+            "failed": 0,
+            "helperAssertions": 2502,
+            "sourceRows": 166,
+            "uniqueInputObjects": 165,
+            "duplicateRows": 1,
+            "freshNodeExecutions": 498
+          },
+          "scope": "Root Fraction expectations frozen before imports;11 exact preimages and staged bytes; only arithmetic bank and six counters; NFS helper addition is exactly reversible to all26 previous scopes. Public raw score bits and3decimal main only; classification stays in separate registry proof."
+        },
+        "application": {
+          "file": "reports/review-20261003/nfs-source-bank-evidence-application-final26.json",
+          "sha256": "cfe5165c657d591cebb36f39705e0454f5e864e54f06b1a849dc8cbaa2bb460d"
+        },
+        "reviewedBankScope": "166 retained exact canonical-decimal source formula scenarios (165 distinct stored input objects, one repeated scenario), correctly rounded nearest IEEE754 binary64 raw.nfs bits and three-decimal main only in the exported API. Exact strict source cutoff codes are proven in separate four-engine registry evidence, not asserted as visible/API-exposed. Lower0.12 at age>=65 is declared implementation policy; primary-source overlap at exact35/65 remains clinically unadjudicated. No fibrosis diagnosis, population transportability, treatment advice or full-method approval.",
+        "currentBinding": {
+          "source26BankSha256": "e9ab423e325774d5bd11f8c36e1284f9d0183fd627cd961d20599523f5961449",
+          "implementations": [
+            {
+              "file": "apps/website/private/tool-code/nafld-fibrosis-score/calculator.js",
+              "sha256": "e59d0cf9803b93948846777cf616fe7eae8446a69dbdf74255dc30724fbb61a9"
+            },
+            {
+              "file": "apps/dashboard/private/tool-code/nafld-fibrosis-score/calculator.js",
+              "sha256": "e59d0cf9803b93948846777cf616fe7eae8446a69dbdf74255dc30724fbb61a9"
+            },
+            {
+              "file": "apps/command-center/private/tool-code/nafld-fibrosis-score/calculator.js",
+              "sha256": "e59d0cf9803b93948846777cf616fe7eae8446a69dbdf74255dc30724fbb61a9"
+            }
+          ],
+          "subsequentReviewedRebinds": []
+        },
+        "originalFailuresAndScopeQualificationsPreserved": true,
+        "clinicalApproval": "not-performed",
+        "professionalLanguageApproval": "not-performed",
+        "sourceRightsApproval": "not-performed",
+        "fullMethodConformance": "not-performed"
+      },
+      "actualAdapterExecutions": 498,
+      "actualVmExecutions": 498,
+      "implementations": [
+        {
+          "app": "website",
+          "file": "apps/website/private/tool-code/nafld-fibrosis-score/calculator.js",
+          "sha256": "e59d0cf9803b93948846777cf616fe7eae8446a69dbdf74255dc30724fbb61a9",
+          "currentBeforeSha256": "67b9d36b869ba595382716f3fcd1be4e2c14792ee8e3dc64668809e810d083f6",
+          "sourceCandidate": {
+            "file": "reports/review-20261003/nafld-nfs-nearest-rational-candidate-final26-v2.json",
+            "sha256": "c567f34a297f4efb54e31183ca4a7578f15b6b504d801120a234fdb232a0b993"
+          }
+        },
+        {
+          "app": "dashboard",
+          "file": "apps/dashboard/private/tool-code/nafld-fibrosis-score/calculator.js",
+          "sha256": "e59d0cf9803b93948846777cf616fe7eae8446a69dbdf74255dc30724fbb61a9",
+          "currentBeforeSha256": "67b9d36b869ba595382716f3fcd1be4e2c14792ee8e3dc64668809e810d083f6",
+          "sourceCandidate": {
+            "file": "reports/review-20261003/nafld-nfs-nearest-rational-candidate-final26-v2.json",
+            "sha256": "c567f34a297f4efb54e31183ca4a7578f15b6b504d801120a234fdb232a0b993"
+          }
+        },
+        {
+          "app": "command-center",
+          "file": "apps/command-center/private/tool-code/nafld-fibrosis-score/calculator.js",
+          "sha256": "e59d0cf9803b93948846777cf616fe7eae8446a69dbdf74255dc30724fbb61a9",
+          "currentBeforeSha256": "67b9d36b869ba595382716f3fcd1be4e2c14792ee8e3dc64668809e810d083f6",
+          "sourceCandidate": {
+            "file": "reports/review-20261003/nafld-nfs-nearest-rational-candidate-final26-v2.json",
+            "sha256": "c567f34a297f4efb54e31183ca4a7578f15b6b504d801120a234fdb232a0b993"
+          }
+        }
+      ],
+      "qualifications": [
+        "166 retained exact canonical-decimal source formula scenarios (165 distinct stored input objects, one repeated scenario), correctly rounded nearest IEEE754 binary64 raw.nfs bits and three-decimal main only in the exported API. Exact strict source cutoff codes are proven in separate four-engine registry evidence, not asserted as visible/API-exposed. Lower0.12 at age>=65 is declared implementation policy; primary-source overlap at exact35/65 remains clinically unadjudicated. No fibrosis diagnosis, population transportability, treatment advice or full-method approval.",
+        "Original160 failures, including140 fourEPS raw discrepancies, remain failed in their immutable historical report; this is a fresh exact-bit V2 test, not tolerance relaxation or historical reclassification.",
+        "Angulo2007 original full text was not obtained; its abstract and posterior McPherson primary Table1/Table4/Figure4 with the recorded access scopes support only the stated component.",
+        "Thirteen invalid input contracts are platform form bounds, not demonstrated source population inclusion/exclusion limits.",
+        "Four inline examples are only a subset of the complete downloadable bank. Clinical/professional-language/source-rights/full-method approvals remain not performed."
+      ],
+      "clinicalApproval": "not-performed",
+      "professionalLanguageApproval": "not-performed",
+      "sourceRightsApproval": "not-performed",
+      "fullMethodConformance": "not-performed",
+      "publicCandidateBankOmitted": true
+    },
+    "methodVersion": "NFS de Angulo et al. (2007), seis variáveis; fórmula e cortes originais conferidos na Tabela 1 de McPherson et al. (2017). Esta implementação usa o corte inferior 0,12 para idade ≥65 anos; o corte superior continua 0,676.",
+    "implementationVersion": "nafld-fibrosis-score@native-2026-10-04+e59d0cf9803b",
+    "currentMethodSource": "https://pubmed.ncbi.nlm.nih.gov/17393509/",
+    "versionEvidence": {
+      "status": "variant-and-source-edition-recorded",
+      "checkedAt": "2026-10-03",
+      "implementedVariant": "NFS = −1,675 + 0,037 × idade + 0,094 × IMC + 1,13 × (glicemia alterada/diabetes: 1) + 0,99 × AST/ALT − 0,013 × plaquetas (10⁹/L) − 0,66 × albumina (g/dL).",
+      "inputContract": {
+        "fields": [
+          {
+            "key": "idade",
+            "label": "Idade",
+            "type": "num",
+            "min": 18,
+            "max": 100,
+            "unit": "anos",
+            "optional": false,
+            "options": null
+          },
+          {
+            "key": "imc",
+            "label": "IMC",
+            "type": "num",
+            "min": 12,
+            "max": 80,
+            "unit": "kg/m²",
+            "optional": false,
+            "options": null
+          },
+          {
+            "key": "dm",
+            "label": "Glicemia de jejum alterada ou diabetes",
+            "type": "radio",
+            "optional": false,
+            "options": {
+              "0": "Não",
+              "1": "Sim"
+            }
+          },
+          {
+            "key": "ast",
+            "label": "AST (TGO)",
+            "type": "num",
+            "min": 1,
+            "max": 5000,
+            "unit": "U/L",
+            "optional": false,
+            "options": null
+          },
+          {
+            "key": "alt",
+            "label": "ALT (TGP)",
+            "type": "num",
+            "min": 1,
+            "max": 5000,
+            "unit": "U/L",
+            "optional": false,
+            "options": null
+          },
+          {
+            "key": "plq",
+            "label": "Plaquetas",
+            "type": "num",
+            "min": 5,
+            "max": 1500,
+            "unit": "× 10³/mm³",
+            "optional": false,
+            "options": null
+          },
+          {
+            "key": "alb",
+            "label": "Albumina",
+            "type": "num",
+            "min": 1,
+            "max": 6,
+            "unit": "g/dL",
+            "optional": false,
+            "options": null
+          }
+        ],
+        "hash": "1d7c0164ec6ebad1428a6b23b13501c5d895b0ee7b26c93e4dc8a6c04bfa90b2"
+      },
+      "sourceEditions": [
+        {
+          "citation": "Angulo P et al. The NAFLD fibrosis score: a noninvasive system that identifies liver fibrosis in patients with NAFLD. Hepatology, 2007.",
+          "url": "https://doi.org/10.1002/hep.21496",
+          "class": "primary-publication-abstract-or-metadata-read",
+          "publicationEditionConfirmed": true,
+          "fullTextRetrieved": false,
+          "formulaConformance": "not-assessed",
+          "publication": {
+            "title": "The NAFLD fibrosis score: a noninvasive system that identifies liver fibrosis in patients with NAFLD.",
+            "year": "2007",
+            "firstPublicationDate": "2007-04-01",
+            "doi": "10.1002/hep.21496",
+            "pmid": "17393509",
+            "journal": "Hepatology (Baltimore, Md.)",
+            "authors": "Angulo P, Hui JM, Marchesini G, Bugianesi E, George J, Farrell GC, Enders F, Saksena S, Burt AD, Bida JP, Lindor K, Sanderson SO, Lenzi M, Adams LA, Kench J, Therneau TM, Day CP."
+          },
+          "primaryPublicationUrl": "https://pubmed.ncbi.nlm.nih.gov/17393509/",
+          "abstractAvailable": true,
+          "fullTextSha256": null,
+          "abstractSha256": "65cef6c5b467af005c4d36a6ef9cc4c29499bb828001654ea2c618c89f1ef969",
+          "matchedBy": "exact-DOI-or-PMID"
+        },
+        {
+          "citation": "McPherson S et al. Age as a confounding factor for the accurate non-invasive diagnosis of advanced NAFLD fibrosis. Am J Gastroenterol, 2017.",
+          "url": "https://doi.org/10.1038/ajg.2016.453",
+          "class": "primary-publication-full-text-retrieved",
+          "publicationEditionConfirmed": true,
+          "fullTextRetrieved": true,
+          "formulaConformance": "not-assessed",
+          "publication": {
+            "title": "Age as a Confounding Factor for the Accurate Non-Invasive Diagnosis of Advanced NAFLD Fibrosis.",
+            "year": "2017",
+            "firstPublicationDate": "2016-10-11",
+            "doi": "10.1038/ajg.2016.453",
+            "pmid": "27725647",
+            "pmcid": "PMC5418560",
+            "journal": "The American journal of gastroenterology",
+            "authors": "McPherson S, Hardy T, Dufour JF, Petta S, Romero-Gomez M, Allison M, Oliveira CP, Francque S, Van Gaal L, Schattenberg JM, Tiniakos D, Burt A, Bugianesi E, Ratziu V, Day CP, Anstee QM."
+          },
+          "primaryPublicationUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5418560/",
+          "abstractAvailable": true,
+          "fullTextSha256": "dd3c432d7ff4334acc144b41dafd57e59ab58ec3c095fda3594e6e4fda0bae8a",
+          "abstractSha256": "77305fd43610a3debb8aa45e5f6c0665320385c8fc68c28398b0d1ac0a2032e0",
+          "matchedBy": "exact-DOI-or-PMID"
+        },
+        {
+          "citation": "Rinella ME et al. AASLD Practice Guidance on the clinical assessment and management of nonalcoholic fatty liver disease. Hepatology, 2023.",
+          "url": "https://doi.org/10.1097/HEP.0000000000000323",
+          "class": "primary-publication-abstract-or-metadata-read",
+          "publicationEditionConfirmed": true,
+          "fullTextRetrieved": false,
+          "formulaConformance": "not-assessed",
+          "publication": {
+            "title": "AASLD Practice Guidance on the clinical assessment and management of nonalcoholic fatty liver disease.",
+            "year": "2023",
+            "firstPublicationDate": "2023-03-17",
+            "doi": "10.1097/hep.0000000000000323",
+            "pmid": "36727674",
+            "pmcid": "PMC10735173",
+            "journal": "Hepatology (Baltimore, Md.)",
+            "authors": "Rinella ME, Neuschwander-Tetri BA, Siddiqui MS, Abdelmalek MF, Caldwell S, Barb D, Kleiner DE, Loomba R."
+          },
+          "primaryPublicationUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10735173/",
+          "abstractAvailable": false,
+          "fullTextSha256": null,
+          "abstractSha256": null,
+          "matchedBy": "exact-DOI-or-PMID"
+        }
+      ],
+      "publicationEditionConfirmed": true,
+      "fullFormulaConformanceReviewed": false,
+      "formulaConformance": "Not established by bibliographic identity or automatic full-text retrieval; retain independent arithmetic and clinical review as separate evidence.",
+      "independentArithmetic": {
+        "status": "passed",
+        "testedAt": "2026-10-04T17:07:59.712Z",
+        "total": 166,
+        "passed": 166,
+        "sourceRowCount": 166,
+        "uniqueApiInputCount": 165,
+        "sourceContextCount": 166,
+        "embeddedCasesAreSubset": true,
+        "embeddedCaseCount": 4,
+        "caseStorage": {
+          "mode": "complete-downloadable-bank-with-inline-subset",
+          "file": "independent-source-cases.json",
+          "sha256": "d030d06c9d8abbec3c012c8167c42b33aee6c8c6555af40d710a8ac05729499f",
+          "total": 166,
+          "bankRowCount": 166,
+          "uniqueApiInputCount": 165,
+          "sourceContextCount": 166,
+          "expectedEvidence": [
+            {
+              "file": "reports/review-20261003/nfs-bank-independent-expectations-publication-final26.json",
+              "sha256": "107612e74eaf60cb0d1c8a9fc7b0ef3bc1c2afa870849593611ca8f1d32d96c4"
+            },
+            {
+              "file": "nafld-nfs-independent-oracle-final26.json",
+              "sha256": "66a453c55b474999383eb541256005b576ab9bce2be0e057e4fd1c7dc3129eba",
+              "preparedBeforeRootImplementationImports": true
+            }
+          ],
+          "obtainedEvidence": {
+            "file": "reports/review-20261003/nfs-bank-independent-check-publication-final26-r3.json",
+            "sha256": "4f3cdd34a95bb1395fba55e159209ec4616db315321967f4c0374c75b2559142"
+          },
+          "packagingRequirement": "Freeze source V2 plus reviewed metadata composition before fresh26 package generation; bank replay does not expose private registry categories."
+        },
+        "inputIdentity": {
+          "definition": "Distinct JSON input objects within each method after recursively sorting object keys; array order, numeric values and JSON value types preserved. Uses stored input/inputs before implicit default completion, numeric coercion or clinical feature interpretation. Identity across different methods is not collapsed. Repeated scenarios are retained and coverage status is unchanged.",
+          "sourceRows": 166,
+          "uniqueApiInputs": 165,
+          "duplicateRows": 1,
+          "duplicates": [
+            {
+              "index": 45,
+              "sameStoredInputAsIndex": 1
+            }
+          ],
+          "expectationAudit": {
+            "file": "reports/review-20261003/nfs-bank-independent-expectations-publication-final26.json",
+            "sha256": "107612e74eaf60cb0d1c8a9fc7b0ef3bc1c2afa870849593611ca8f1d32d96c4"
+          }
+        },
+        "scope": "166 retained exact canonical-decimal source formula scenarios (165 distinct stored input objects, one repeated scenario), correctly rounded nearest IEEE754 binary64 raw.nfs bits and three-decimal main only in the exported API. Exact strict source cutoff codes are proven in separate four-engine registry evidence, not asserted as visible/API-exposed. Lower0.12 at age>=65 is declared implementation policy; primary-source overlap at exact35/65 remains clinically unadjudicated. No fibrosis diagnosis, population transportability, treatment advice or full-method approval.",
+        "sources": [
+          {
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17393509/",
+            "doi": "10.1002/hep.21496",
+            "edition": "Angulo et al. Hepatology2007;45(4):846–854",
+            "ownRead": "Abstract, bibliographic metadata and original733biopsyconfirmedNAFLD derivation/validation480/253, six variables and two thresholds. No claim original full article obtained.",
+            "limitations": "DOI/publisher full-text inaccessible in this review; coefficients independently cross-checked in posterior primary Table1, not by claiming original full-text read."
+          },
+          {
+            "url": "https://eprints.ncl.ac.uk/229450",
+            "doi": "10.1038/ajg.2016.453",
+            "edition": "McPherson et al. American Journal of Gastroenterology2017;112(5):740–751; online2016",
+            "ownRead": "Published PDF downloaded from public author repository,13pages. Personally read Table1 formula/units, associated methods on PDFpage3, Table4 older≥65 cutoff/performance and study limitations on PDFpage10, Figure4/caption and conclusions on PDFpage11; three rendered page images personally viewed. Not a claim full13page article review.",
+            "specificFindings": [
+              "Table1 six decimal coefficients, AST/ALT, original strict lower<−1.455 and upper>0.676; equality is between the cutoffs.",
+              "Table4 and Figure4 proposed lower0.12 in older≥65 group; upper0.676 unchanged.",
+              "Figure4 displays≤35,36–65,≥65; caption says<35 and35–65,≥65. Exact35/65 interpretation documented as primary-source ambiguity and not clinically adjudicated.",
+              "European specialist biopsy-confirmedNAFLD cohort; other hepatopathies and excessive alcohol excluded. Population applicability and imperfect diagnostic performance not replaced by arithmetic tests.",
+              "Platelet units10^9/L equal10^3/mm^3 numerically; albuming/dL."
+            ],
+            "licenseObserved": "CC BY-NC-SA4.0 for the published article at the author repository; does not itself approve implementation/package rights.",
+            "limitations": "PMC access was CAPTCHA; author repository alternate public PDF was used without circumventing an access control."
+          }
+        ],
+        "evidencePath": "reports/review-20261003/nfs-bank-independent-check-publication-final26-r3.json",
+        "evidenceSha256": "4f3cdd34a95bb1395fba55e159209ec4616db315321967f4c0374c75b2559142",
+        "originalEvidence": {
+          "file": "reports/review-20261003/nafld-nfs-source-before-check-final26.json",
+          "sha256": "c629b06817a84c9119f96cbfa80b178dbd05850682b62130bfde244cb0a139f2"
+        },
+        "registryClassificationProof": {
+          "file": "reports/review-20261003/nafld-nfs-nearest-rational-independent-peer-final26-v2.json",
+          "sha256": "78074cdc0328f1013ce73b60db06563efb7ce7c714bdfacc677dd09353ee600b",
+          "expected166CodesCovered": true,
+          "visibleApiClassification": "not-exposed",
+          "clinicalAgeBoundaryAdjudication": "not-performed"
+        },
+        "independentPeer": {
+          "status": "passed",
+          "requiredScope": "Bank/evidence/helper metadata peer; registry source proof is separately completed and does not approve clinical use.",
+          "recordedAt": "2026-10-04T18:58:12.326Z",
+          "scope": "Existing independent technical complete-bank/metadata/helper peer recorded after guarded source26 application. This status does not certify clinical eligibility, full instrument conformance, professional translation or source rights; no new arithmetic/browser execution is claimed by this metadata amendment.",
+          "previousStatus": {
+            "status": "pending",
+            "requiredScope": "Bank/evidence/helper metadata peer; registry source proof is separately completed and does not approve clinical use."
+          },
+          "peer": {
+            "file": "reports/review-20261003/nfs-source-bank-root-peer-final26-r3.json",
+            "sha256": "4477f3a6fde2a8227cb745a2043d5e9466f1146c52ada0c8ad3ae1befb91d09a",
+            "summary": {
+              "checks": 547,
+              "failed": 0,
+              "helperAssertions": 2502,
+              "sourceRows": 166,
+              "uniqueInputObjects": 165,
+              "duplicateRows": 1,
+              "freshNodeExecutions": 498
+            },
+            "scope": "Root Fraction expectations frozen before imports;11 exact preimages and staged bytes; only arithmetic bank and six counters; NFS helper addition is exactly reversible to all26 previous scopes. Public raw score bits and3decimal main only; classification stays in separate registry proof."
+          },
+          "application": {
+            "file": "reports/review-20261003/nfs-source-bank-evidence-application-final26.json",
+            "sha256": "cfe5165c657d591cebb36f39705e0454f5e864e54f06b1a849dc8cbaa2bb460d"
+          },
+          "reviewedBankScope": "166 retained exact canonical-decimal source formula scenarios (165 distinct stored input objects, one repeated scenario), correctly rounded nearest IEEE754 binary64 raw.nfs bits and three-decimal main only in the exported API. Exact strict source cutoff codes are proven in separate four-engine registry evidence, not asserted as visible/API-exposed. Lower0.12 at age>=65 is declared implementation policy; primary-source overlap at exact35/65 remains clinically unadjudicated. No fibrosis diagnosis, population transportability, treatment advice or full-method approval.",
+          "currentBinding": {
+            "source26BankSha256": "e9ab423e325774d5bd11f8c36e1284f9d0183fd627cd961d20599523f5961449",
+            "implementations": [
+              {
+                "file": "apps/website/private/tool-code/nafld-fibrosis-score/calculator.js",
+                "sha256": "e59d0cf9803b93948846777cf616fe7eae8446a69dbdf74255dc30724fbb61a9"
+              },
+              {
+                "file": "apps/dashboard/private/tool-code/nafld-fibrosis-score/calculator.js",
+                "sha256": "e59d0cf9803b93948846777cf616fe7eae8446a69dbdf74255dc30724fbb61a9"
+              },
+              {
+                "file": "apps/command-center/private/tool-code/nafld-fibrosis-score/calculator.js",
+                "sha256": "e59d0cf9803b93948846777cf616fe7eae8446a69dbdf74255dc30724fbb61a9"
+              }
+            ],
+            "subsequentReviewedRebinds": []
+          },
+          "originalFailuresAndScopeQualificationsPreserved": true,
+          "clinicalApproval": "not-performed",
+          "professionalLanguageApproval": "not-performed",
+          "sourceRightsApproval": "not-performed",
+          "fullMethodConformance": "not-performed"
+        },
+        "actualAdapterExecutions": 498,
+        "actualVmExecutions": 498,
+        "implementations": [
+          {
+            "app": "website",
+            "file": "apps/website/private/tool-code/nafld-fibrosis-score/calculator.js",
+            "sha256": "e59d0cf9803b93948846777cf616fe7eae8446a69dbdf74255dc30724fbb61a9",
+            "currentBeforeSha256": "67b9d36b869ba595382716f3fcd1be4e2c14792ee8e3dc64668809e810d083f6",
+            "sourceCandidate": {
+              "file": "reports/review-20261003/nafld-nfs-nearest-rational-candidate-final26-v2.json",
+              "sha256": "c567f34a297f4efb54e31183ca4a7578f15b6b504d801120a234fdb232a0b993"
+            }
+          },
+          {
+            "app": "dashboard",
+            "file": "apps/dashboard/private/tool-code/nafld-fibrosis-score/calculator.js",
+            "sha256": "e59d0cf9803b93948846777cf616fe7eae8446a69dbdf74255dc30724fbb61a9",
+            "currentBeforeSha256": "67b9d36b869ba595382716f3fcd1be4e2c14792ee8e3dc64668809e810d083f6",
+            "sourceCandidate": {
+              "file": "reports/review-20261003/nafld-nfs-nearest-rational-candidate-final26-v2.json",
+              "sha256": "c567f34a297f4efb54e31183ca4a7578f15b6b504d801120a234fdb232a0b993"
+            }
+          },
+          {
+            "app": "command-center",
+            "file": "apps/command-center/private/tool-code/nafld-fibrosis-score/calculator.js",
+            "sha256": "e59d0cf9803b93948846777cf616fe7eae8446a69dbdf74255dc30724fbb61a9",
+            "currentBeforeSha256": "67b9d36b869ba595382716f3fcd1be4e2c14792ee8e3dc64668809e810d083f6",
+            "sourceCandidate": {
+              "file": "reports/review-20261003/nafld-nfs-nearest-rational-candidate-final26-v2.json",
+              "sha256": "c567f34a297f4efb54e31183ca4a7578f15b6b504d801120a234fdb232a0b993"
+            }
+          }
+        ],
+        "qualifications": [
+          "166 retained exact canonical-decimal source formula scenarios (165 distinct stored input objects, one repeated scenario), correctly rounded nearest IEEE754 binary64 raw.nfs bits and three-decimal main only in the exported API. Exact strict source cutoff codes are proven in separate four-engine registry evidence, not asserted as visible/API-exposed. Lower0.12 at age>=65 is declared implementation policy; primary-source overlap at exact35/65 remains clinically unadjudicated. No fibrosis diagnosis, population transportability, treatment advice or full-method approval.",
+          "Original160 failures, including140 fourEPS raw discrepancies, remain failed in their immutable historical report; this is a fresh exact-bit V2 test, not tolerance relaxation or historical reclassification.",
+          "Angulo2007 original full text was not obtained; its abstract and posterior McPherson primary Table1/Table4/Figure4 with the recorded access scopes support only the stated component.",
+          "Thirteen invalid input contracts are platform form bounds, not demonstrated source population inclusion/exclusion limits.",
+          "Four inline examples are only a subset of the complete downloadable bank. Clinical/professional-language/source-rights/full-method approvals remain not performed."
+        ],
+        "clinicalApproval": "not-performed",
+        "professionalLanguageApproval": "not-performed",
+        "sourceRightsApproval": "not-performed",
+        "fullMethodConformance": "not-performed",
+        "publicCandidateBankOmitted": true
+      },
+      "clinicalApproval": "not-performed",
+      "translationApproval": "not-performed",
+      "releaseApproval": "not-performed",
+      "implementationHash": "e59d0cf9803b93948846777cf616fe7eae8446a69dbdf74255dc30724fbb61a9",
+      "previousImplementationHash": "67b9d36b869ba595382716f3fcd1be4e2c14792ee8e3dc64668809e810d083f6",
+      "sourceDetailsAmendment": {
+        "previousMethodVersion": "NFS/Angulo 2007:6 variáveis; coeficientes originais, limiarespor idade Mc Pherson 2017",
+        "previousLimits": "O NFS original foi desenvolvido em NAFLD confirmada por biópsia e separa grupos por probabilidade de fibrose avançada, com valores intermediários inconclusivos e desempenho imperfeito. Limiares modificados por idade exigem a fonte posterior. O total não confirma estágio histológico nem valida automaticamente toda população com definição atual de MASLD.",
+        "sourceReview": {
+          "file": "reports/review-20261003/nafld-nfs-primary-and-technical-source-review-final26.json",
+          "sha256": "5f7bf97cc161e4d9044be888248fc148f6abab5e9dff9ad8fff0b22c08483060",
+          "readScopes": [
+            {
+              "url": "https://pubmed.ncbi.nlm.nih.gov/17393509/",
+              "doi": "10.1002/hep.21496",
+              "edition": "Angulo et al. Hepatology2007;45(4):846–854",
+              "ownRead": "Abstract, bibliographic metadata and original733biopsyconfirmedNAFLD derivation/validation480/253, six variables and two thresholds. No claim original full article obtained.",
+              "limitations": "DOI/publisher full-text inaccessible in this review; coefficients independently cross-checked in posterior primary Table1, not by claiming original full-text read."
+            },
+            {
+              "url": "https://eprints.ncl.ac.uk/229450",
+              "doi": "10.1038/ajg.2016.453",
+              "edition": "McPherson et al. American Journal of Gastroenterology2017;112(5):740–751; online2016",
+              "ownRead": "Published PDF downloaded from public author repository,13pages. Personally read Table1 formula/units, associated methods on PDFpage3, Table4 older≥65 cutoff/performance and study limitations on PDFpage10, Figure4/caption and conclusions on PDFpage11; three rendered page images personally viewed. Not a claim full13page article review.",
+              "specificFindings": [
+                "Table1 six decimal coefficients, AST/ALT, original strict lower<−1.455 and upper>0.676; equality is between the cutoffs.",
+                "Table4 and Figure4 proposed lower0.12 in older≥65 group; upper0.676 unchanged.",
+                "Figure4 displays≤35,36–65,≥65; caption says<35 and35–65,≥65. Exact35/65 interpretation documented as primary-source ambiguity and not clinically adjudicated.",
+                "European specialist biopsy-confirmedNAFLD cohort; other hepatopathies and excessive alcohol excluded. Population applicability and imperfect diagnostic performance not replaced by arithmetic tests.",
+                "Platelet units10^9/L equal10^3/mm^3 numerically; albuming/dL."
+              ],
+              "licenseObserved": "CC BY-NC-SA4.0 for the published article at the author repository; does not itself approve implementation/package rights.",
+              "limitations": "PMC access was CAPTCHA; author repository alternate public PDF was used without circumventing an access control."
+            }
+          ]
+        },
+        "languageDraft": {
+          "file": "reports/review-20261003/nafld-nfs-source-details-authored-final26.cjs",
+          "sha256": "63579c695a09d73d70ee1289d2d8a85b373d8d6125b35fb10c977704ba845be6",
+          "peer": {
+            "file": "reports/review-20261003/nafld-nfs-source-details-independent-review-final26.json",
+            "sha256": "40ae088e07c2915606496ee73393b54df831b2d52843813a0b362ac36afe3c0d"
+          },
+          "status": "authored-and-technical-peer-checked; not-professional-approved"
+        },
+        "engineApplication": {
+          "file": "reports/review-20261003/nafld-nfs-nearest-rational-application-final26.json",
+          "sha256": "b49065d41ea20f200ab9a3488e01d7e29b4fa8c785f804a4538a605757dd8bc6"
+        },
+        "scope": "Published formula/units and declared cutoffs; exact35/65 clinical source ambiguity retained. Raw nearest binary64 and private strict comparison are separate technical evidence; generic API exposes score, not clinical category. Original2007 full text and professional/clinical/rights review not performed."
+      }
+    },
+    "limits": "O modelo original foi derivado de NAFLD confirmada por biópsia, não de toda população hoje denominada MASLD. McPherson (2017) avaliou serviços especializados europeus, excluiu outras hepatopatias e consumo excessivo de álcool e encontrou desempenho fraco em pessoas ≤35 anos. A Figura 4 e sua legenda divergem nas fronteiras de 35 e 65 anos; essas idades exatas não receberam adjudicação clínica aqui. O limiar inferior de 0,12 para idade ≥65 é a política declarada desta implementação. Plaquetas ×10³/mm³ equivalem numericamente a ×10⁹/L; albumina deve estar em g/dL. O escore é exibido com três casas decimais; a classificação usa os limites estritos sem arredondar o escore. Valores intermediários são inconclusivos; o NFS isolado não confirma F3–F4. Revisão clínica e de idiomas por profissionais independentes não realizada.",
+    "sourceLimitEvidence": {
+      "checkedAt": "2026-10-04T02:52:03.086Z",
+      "scope": "Targeted source reading and authorial documentation, not full method or clinical approval.",
+      "sourceReviewFile": "remaining-native-population-limits-review.json",
+      "sourceReviewSha256": "ba61a9b120a338c518c34ba9f324558b12580e7f5371ea81304b030b45ea44a5",
+      "readingOutcome": "review-outcome-recorded",
+      "unresolved": [
+        "Ajuste por idade McPherson 2017 e AASLD 2023 são fontes posteriores não lidas neste lote. MASLD atual não é definição idêntica automática da coorte antiga."
+      ],
+      "fullMethodConformanceReviewed": false,
+      "clinicalApproval": "not-performed",
+      "professionalLanguageApproval": "not-performed"
     }
   },
-  "review": {
-    "status": "needs-review",
-    "reason": "Revisão documental e clínica independente pendente.",
-    "clinicalValidation": "not-performed"
+  "currentSource": {
+    "file": "apps/website/private/tool-code/nafld-fibrosis-score/calculator.js",
+    "bytes": 7261,
+    "sha256": "e59d0cf9803b93948846777cf616fe7eae8446a69dbdf74255dc30724fbb61a9"
   },
-  "clinicalValidation": "not-performed"
+  "sourceToolSha256": "22727ca5c192418e5fba1128140b09035e2fe47e3f4d46daf1b0a521ef2e4a88",
+  "omittedFullReferenceBanks": [
+    {
+      "rows": 4,
+      "sha256": "0d2d743f4babf85a6803cc7664739ea6d577aae6f5e9f18934e9d499f5da007b",
+      "reason": "Large independent reference bank not bundled; exact evidence scope and file references retained"
+    },
+    {
+      "rows": 4,
+      "sha256": "0d2d743f4babf85a6803cc7664739ea6d577aae6f5e9f18934e9d499f5da007b",
+      "reason": "Large independent reference bank not bundled; exact evidence scope and file references retained"
+    }
+  ],
+  "clinicalApproval": "not-performed",
+  "professionalLanguageApproval": "not-performed",
+  "sourceRightsApproval": "not-performed"
 }

@@ -1,0 +1,1102 @@
+[
+  {
+    "name": "Reject null input",
+    "input": null,
+    "expected": {
+      "code": "INVALID_INPUT",
+      "field": null
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject array input",
+    "input": [],
+    "expected": {
+      "code": "INVALID_INPUT",
+      "field": null
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject string input",
+    "input": "invalid",
+    "expected": {
+      "code": "INVALID_INPUT",
+      "field": null
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject numeric input",
+    "input": 1,
+    "expected": {
+      "code": "INVALID_INPUT",
+      "field": null
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject missing required field idade",
+    "input": {
+      "imc": 25,
+      "dm": "0",
+      "ast": 25,
+      "alt": 50,
+      "plq": 300,
+      "alb": 4.5
+    },
+    "expected": {
+      "code": "REQUIRED_FIELD",
+      "field": "idade"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject empty required field idade",
+    "input": {
+      "idade": "",
+      "imc": 25,
+      "dm": "0",
+      "ast": 25,
+      "alt": 50,
+      "plq": 300,
+      "alb": 4.5
+    },
+    "expected": {
+      "code": "REQUIRED_FIELD",
+      "field": "idade"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject invalid numeric \"NaN\" idade",
+    "input": {
+      "idade": "NaN",
+      "imc": 25,
+      "dm": "0",
+      "ast": 25,
+      "alt": 50,
+      "plq": 300,
+      "alb": 4.5
+    },
+    "expected": {
+      "code": "INVALID_INPUT",
+      "field": "idade"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject invalid numeric \"Infinity\" idade",
+    "input": {
+      "idade": "Infinity",
+      "imc": 25,
+      "dm": "0",
+      "ast": 25,
+      "alt": 50,
+      "plq": 300,
+      "alb": 4.5
+    },
+    "expected": {
+      "code": "INVALID_INPUT",
+      "field": "idade"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject invalid numeric \"1e309\" idade",
+    "input": {
+      "idade": "1e309",
+      "imc": 25,
+      "dm": "0",
+      "ast": 25,
+      "alt": 50,
+      "plq": 300,
+      "alb": 4.5
+    },
+    "expected": {
+      "code": "INVALID_INPUT",
+      "field": "idade"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject invalid numeric \"invalid\" idade",
+    "input": {
+      "idade": "invalid",
+      "imc": 25,
+      "dm": "0",
+      "ast": 25,
+      "alt": 50,
+      "plq": 300,
+      "alb": 4.5
+    },
+    "expected": {
+      "code": "INVALID_INPUT",
+      "field": "idade"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject invalid numeric {} idade",
+    "input": {
+      "idade": {},
+      "imc": 25,
+      "dm": "0",
+      "ast": 25,
+      "alt": 50,
+      "plq": 300,
+      "alb": 4.5
+    },
+    "expected": {
+      "code": "INVALID_INPUT",
+      "field": "idade"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject invalid numeric true idade",
+    "input": {
+      "idade": true,
+      "imc": 25,
+      "dm": "0",
+      "ast": 25,
+      "alt": 50,
+      "plq": 300,
+      "alb": 4.5
+    },
+    "expected": {
+      "code": "INVALID_INPUT",
+      "field": "idade"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject below documented minimum idade",
+    "input": {
+      "idade": 16.2,
+      "imc": 25,
+      "dm": "0",
+      "ast": 25,
+      "alt": 50,
+      "plq": 300,
+      "alb": 4.5
+    },
+    "expected": {
+      "code": "OUT_OF_RANGE",
+      "field": "idade"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject above documented maximum idade",
+    "input": {
+      "idade": 110,
+      "imc": 25,
+      "dm": "0",
+      "ast": 25,
+      "alt": 50,
+      "plq": 300,
+      "alb": 4.5
+    },
+    "expected": {
+      "code": "OUT_OF_RANGE",
+      "field": "idade"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject missing required field imc",
+    "input": {
+      "idade": 40,
+      "dm": "0",
+      "ast": 25,
+      "alt": 50,
+      "plq": 300,
+      "alb": 4.5
+    },
+    "expected": {
+      "code": "REQUIRED_FIELD",
+      "field": "imc"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject empty required field imc",
+    "input": {
+      "idade": 40,
+      "imc": "",
+      "dm": "0",
+      "ast": 25,
+      "alt": 50,
+      "plq": 300,
+      "alb": 4.5
+    },
+    "expected": {
+      "code": "REQUIRED_FIELD",
+      "field": "imc"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject invalid numeric \"NaN\" imc",
+    "input": {
+      "idade": 40,
+      "imc": "NaN",
+      "dm": "0",
+      "ast": 25,
+      "alt": 50,
+      "plq": 300,
+      "alb": 4.5
+    },
+    "expected": {
+      "code": "INVALID_INPUT",
+      "field": "imc"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject invalid numeric \"Infinity\" imc",
+    "input": {
+      "idade": 40,
+      "imc": "Infinity",
+      "dm": "0",
+      "ast": 25,
+      "alt": 50,
+      "plq": 300,
+      "alb": 4.5
+    },
+    "expected": {
+      "code": "INVALID_INPUT",
+      "field": "imc"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject invalid numeric \"1e309\" imc",
+    "input": {
+      "idade": 40,
+      "imc": "1e309",
+      "dm": "0",
+      "ast": 25,
+      "alt": 50,
+      "plq": 300,
+      "alb": 4.5
+    },
+    "expected": {
+      "code": "INVALID_INPUT",
+      "field": "imc"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject invalid numeric \"invalid\" imc",
+    "input": {
+      "idade": 40,
+      "imc": "invalid",
+      "dm": "0",
+      "ast": 25,
+      "alt": 50,
+      "plq": 300,
+      "alb": 4.5
+    },
+    "expected": {
+      "code": "INVALID_INPUT",
+      "field": "imc"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject invalid numeric {} imc",
+    "input": {
+      "idade": 40,
+      "imc": {},
+      "dm": "0",
+      "ast": 25,
+      "alt": 50,
+      "plq": 300,
+      "alb": 4.5
+    },
+    "expected": {
+      "code": "INVALID_INPUT",
+      "field": "imc"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject invalid numeric true imc",
+    "input": {
+      "idade": 40,
+      "imc": true,
+      "dm": "0",
+      "ast": 25,
+      "alt": 50,
+      "plq": 300,
+      "alb": 4.5
+    },
+    "expected": {
+      "code": "INVALID_INPUT",
+      "field": "imc"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject below documented minimum imc",
+    "input": {
+      "idade": 40,
+      "imc": 10.8,
+      "dm": "0",
+      "ast": 25,
+      "alt": 50,
+      "plq": 300,
+      "alb": 4.5
+    },
+    "expected": {
+      "code": "OUT_OF_RANGE",
+      "field": "imc"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject above documented maximum imc",
+    "input": {
+      "idade": 40,
+      "imc": 88,
+      "dm": "0",
+      "ast": 25,
+      "alt": 50,
+      "plq": 300,
+      "alb": 4.5
+    },
+    "expected": {
+      "code": "OUT_OF_RANGE",
+      "field": "imc"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject missing required field dm",
+    "input": {
+      "idade": 40,
+      "imc": 25,
+      "ast": 25,
+      "alt": 50,
+      "plq": 300,
+      "alb": 4.5
+    },
+    "expected": {
+      "code": "REQUIRED_FIELD",
+      "field": "dm"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject empty required field dm",
+    "input": {
+      "idade": 40,
+      "imc": 25,
+      "dm": "",
+      "ast": 25,
+      "alt": 50,
+      "plq": 300,
+      "alb": 4.5
+    },
+    "expected": {
+      "code": "REQUIRED_FIELD",
+      "field": "dm"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject undocumented option dm",
+    "input": {
+      "idade": 40,
+      "imc": 25,
+      "dm": "__ELUCENIA_INVALID_OPTION__",
+      "ast": 25,
+      "alt": 50,
+      "plq": 300,
+      "alb": 4.5
+    },
+    "expected": {
+      "code": "INVALID_OPTION",
+      "field": "dm"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject missing required field ast",
+    "input": {
+      "idade": 40,
+      "imc": 25,
+      "dm": "0",
+      "alt": 50,
+      "plq": 300,
+      "alb": 4.5
+    },
+    "expected": {
+      "code": "REQUIRED_FIELD",
+      "field": "ast"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject empty required field ast",
+    "input": {
+      "idade": 40,
+      "imc": 25,
+      "dm": "0",
+      "ast": "",
+      "alt": 50,
+      "plq": 300,
+      "alb": 4.5
+    },
+    "expected": {
+      "code": "REQUIRED_FIELD",
+      "field": "ast"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject invalid numeric \"NaN\" ast",
+    "input": {
+      "idade": 40,
+      "imc": 25,
+      "dm": "0",
+      "ast": "NaN",
+      "alt": 50,
+      "plq": 300,
+      "alb": 4.5
+    },
+    "expected": {
+      "code": "INVALID_INPUT",
+      "field": "ast"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject invalid numeric \"Infinity\" ast",
+    "input": {
+      "idade": 40,
+      "imc": 25,
+      "dm": "0",
+      "ast": "Infinity",
+      "alt": 50,
+      "plq": 300,
+      "alb": 4.5
+    },
+    "expected": {
+      "code": "INVALID_INPUT",
+      "field": "ast"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject invalid numeric \"1e309\" ast",
+    "input": {
+      "idade": 40,
+      "imc": 25,
+      "dm": "0",
+      "ast": "1e309",
+      "alt": 50,
+      "plq": 300,
+      "alb": 4.5
+    },
+    "expected": {
+      "code": "INVALID_INPUT",
+      "field": "ast"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject invalid numeric \"invalid\" ast",
+    "input": {
+      "idade": 40,
+      "imc": 25,
+      "dm": "0",
+      "ast": "invalid",
+      "alt": 50,
+      "plq": 300,
+      "alb": 4.5
+    },
+    "expected": {
+      "code": "INVALID_INPUT",
+      "field": "ast"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject invalid numeric {} ast",
+    "input": {
+      "idade": 40,
+      "imc": 25,
+      "dm": "0",
+      "ast": {},
+      "alt": 50,
+      "plq": 300,
+      "alb": 4.5
+    },
+    "expected": {
+      "code": "INVALID_INPUT",
+      "field": "ast"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject invalid numeric true ast",
+    "input": {
+      "idade": 40,
+      "imc": 25,
+      "dm": "0",
+      "ast": true,
+      "alt": 50,
+      "plq": 300,
+      "alb": 4.5
+    },
+    "expected": {
+      "code": "INVALID_INPUT",
+      "field": "ast"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject below documented minimum ast",
+    "input": {
+      "idade": 40,
+      "imc": 25,
+      "dm": "0",
+      "ast": 0,
+      "alt": 50,
+      "plq": 300,
+      "alb": 4.5
+    },
+    "expected": {
+      "code": "OUT_OF_RANGE",
+      "field": "ast"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject above documented maximum ast",
+    "input": {
+      "idade": 40,
+      "imc": 25,
+      "dm": "0",
+      "ast": 5500,
+      "alt": 50,
+      "plq": 300,
+      "alb": 4.5
+    },
+    "expected": {
+      "code": "OUT_OF_RANGE",
+      "field": "ast"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject missing required field alt",
+    "input": {
+      "idade": 40,
+      "imc": 25,
+      "dm": "0",
+      "ast": 25,
+      "plq": 300,
+      "alb": 4.5
+    },
+    "expected": {
+      "code": "REQUIRED_FIELD",
+      "field": "alt"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject empty required field alt",
+    "input": {
+      "idade": 40,
+      "imc": 25,
+      "dm": "0",
+      "ast": 25,
+      "alt": "",
+      "plq": 300,
+      "alb": 4.5
+    },
+    "expected": {
+      "code": "REQUIRED_FIELD",
+      "field": "alt"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject invalid numeric \"NaN\" alt",
+    "input": {
+      "idade": 40,
+      "imc": 25,
+      "dm": "0",
+      "ast": 25,
+      "alt": "NaN",
+      "plq": 300,
+      "alb": 4.5
+    },
+    "expected": {
+      "code": "INVALID_INPUT",
+      "field": "alt"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject invalid numeric \"Infinity\" alt",
+    "input": {
+      "idade": 40,
+      "imc": 25,
+      "dm": "0",
+      "ast": 25,
+      "alt": "Infinity",
+      "plq": 300,
+      "alb": 4.5
+    },
+    "expected": {
+      "code": "INVALID_INPUT",
+      "field": "alt"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject invalid numeric \"1e309\" alt",
+    "input": {
+      "idade": 40,
+      "imc": 25,
+      "dm": "0",
+      "ast": 25,
+      "alt": "1e309",
+      "plq": 300,
+      "alb": 4.5
+    },
+    "expected": {
+      "code": "INVALID_INPUT",
+      "field": "alt"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject invalid numeric \"invalid\" alt",
+    "input": {
+      "idade": 40,
+      "imc": 25,
+      "dm": "0",
+      "ast": 25,
+      "alt": "invalid",
+      "plq": 300,
+      "alb": 4.5
+    },
+    "expected": {
+      "code": "INVALID_INPUT",
+      "field": "alt"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject invalid numeric {} alt",
+    "input": {
+      "idade": 40,
+      "imc": 25,
+      "dm": "0",
+      "ast": 25,
+      "alt": {},
+      "plq": 300,
+      "alb": 4.5
+    },
+    "expected": {
+      "code": "INVALID_INPUT",
+      "field": "alt"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject invalid numeric true alt",
+    "input": {
+      "idade": 40,
+      "imc": 25,
+      "dm": "0",
+      "ast": 25,
+      "alt": true,
+      "plq": 300,
+      "alb": 4.5
+    },
+    "expected": {
+      "code": "INVALID_INPUT",
+      "field": "alt"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject below documented minimum alt",
+    "input": {
+      "idade": 40,
+      "imc": 25,
+      "dm": "0",
+      "ast": 25,
+      "alt": 0,
+      "plq": 300,
+      "alb": 4.5
+    },
+    "expected": {
+      "code": "OUT_OF_RANGE",
+      "field": "alt"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject above documented maximum alt",
+    "input": {
+      "idade": 40,
+      "imc": 25,
+      "dm": "0",
+      "ast": 25,
+      "alt": 5500,
+      "plq": 300,
+      "alb": 4.5
+    },
+    "expected": {
+      "code": "OUT_OF_RANGE",
+      "field": "alt"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject missing required field plq",
+    "input": {
+      "idade": 40,
+      "imc": 25,
+      "dm": "0",
+      "ast": 25,
+      "alt": 50,
+      "alb": 4.5
+    },
+    "expected": {
+      "code": "REQUIRED_FIELD",
+      "field": "plq"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject empty required field plq",
+    "input": {
+      "idade": 40,
+      "imc": 25,
+      "dm": "0",
+      "ast": 25,
+      "alt": 50,
+      "plq": "",
+      "alb": 4.5
+    },
+    "expected": {
+      "code": "REQUIRED_FIELD",
+      "field": "plq"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject invalid numeric \"NaN\" plq",
+    "input": {
+      "idade": 40,
+      "imc": 25,
+      "dm": "0",
+      "ast": 25,
+      "alt": 50,
+      "plq": "NaN",
+      "alb": 4.5
+    },
+    "expected": {
+      "code": "INVALID_INPUT",
+      "field": "plq"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject invalid numeric \"Infinity\" plq",
+    "input": {
+      "idade": 40,
+      "imc": 25,
+      "dm": "0",
+      "ast": 25,
+      "alt": 50,
+      "plq": "Infinity",
+      "alb": 4.5
+    },
+    "expected": {
+      "code": "INVALID_INPUT",
+      "field": "plq"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject invalid numeric \"1e309\" plq",
+    "input": {
+      "idade": 40,
+      "imc": 25,
+      "dm": "0",
+      "ast": 25,
+      "alt": 50,
+      "plq": "1e309",
+      "alb": 4.5
+    },
+    "expected": {
+      "code": "INVALID_INPUT",
+      "field": "plq"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject invalid numeric \"invalid\" plq",
+    "input": {
+      "idade": 40,
+      "imc": 25,
+      "dm": "0",
+      "ast": 25,
+      "alt": 50,
+      "plq": "invalid",
+      "alb": 4.5
+    },
+    "expected": {
+      "code": "INVALID_INPUT",
+      "field": "plq"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject invalid numeric {} plq",
+    "input": {
+      "idade": 40,
+      "imc": 25,
+      "dm": "0",
+      "ast": 25,
+      "alt": 50,
+      "plq": {},
+      "alb": 4.5
+    },
+    "expected": {
+      "code": "INVALID_INPUT",
+      "field": "plq"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject invalid numeric true plq",
+    "input": {
+      "idade": 40,
+      "imc": 25,
+      "dm": "0",
+      "ast": 25,
+      "alt": 50,
+      "plq": true,
+      "alb": 4.5
+    },
+    "expected": {
+      "code": "INVALID_INPUT",
+      "field": "plq"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject below documented minimum plq",
+    "input": {
+      "idade": 40,
+      "imc": 25,
+      "dm": "0",
+      "ast": 25,
+      "alt": 50,
+      "plq": 4,
+      "alb": 4.5
+    },
+    "expected": {
+      "code": "OUT_OF_RANGE",
+      "field": "plq"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject above documented maximum plq",
+    "input": {
+      "idade": 40,
+      "imc": 25,
+      "dm": "0",
+      "ast": 25,
+      "alt": 50,
+      "plq": 1650,
+      "alb": 4.5
+    },
+    "expected": {
+      "code": "OUT_OF_RANGE",
+      "field": "plq"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject missing required field alb",
+    "input": {
+      "idade": 40,
+      "imc": 25,
+      "dm": "0",
+      "ast": 25,
+      "alt": 50,
+      "plq": 300
+    },
+    "expected": {
+      "code": "REQUIRED_FIELD",
+      "field": "alb"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject empty required field alb",
+    "input": {
+      "idade": 40,
+      "imc": 25,
+      "dm": "0",
+      "ast": 25,
+      "alt": 50,
+      "plq": 300,
+      "alb": ""
+    },
+    "expected": {
+      "code": "REQUIRED_FIELD",
+      "field": "alb"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject invalid numeric \"NaN\" alb",
+    "input": {
+      "idade": 40,
+      "imc": 25,
+      "dm": "0",
+      "ast": 25,
+      "alt": 50,
+      "plq": 300,
+      "alb": "NaN"
+    },
+    "expected": {
+      "code": "INVALID_INPUT",
+      "field": "alb"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject invalid numeric \"Infinity\" alb",
+    "input": {
+      "idade": 40,
+      "imc": 25,
+      "dm": "0",
+      "ast": 25,
+      "alt": 50,
+      "plq": 300,
+      "alb": "Infinity"
+    },
+    "expected": {
+      "code": "INVALID_INPUT",
+      "field": "alb"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject invalid numeric \"1e309\" alb",
+    "input": {
+      "idade": 40,
+      "imc": 25,
+      "dm": "0",
+      "ast": 25,
+      "alt": 50,
+      "plq": 300,
+      "alb": "1e309"
+    },
+    "expected": {
+      "code": "INVALID_INPUT",
+      "field": "alb"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject invalid numeric \"invalid\" alb",
+    "input": {
+      "idade": 40,
+      "imc": 25,
+      "dm": "0",
+      "ast": 25,
+      "alt": 50,
+      "plq": 300,
+      "alb": "invalid"
+    },
+    "expected": {
+      "code": "INVALID_INPUT",
+      "field": "alb"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject invalid numeric {} alb",
+    "input": {
+      "idade": 40,
+      "imc": 25,
+      "dm": "0",
+      "ast": 25,
+      "alt": 50,
+      "plq": 300,
+      "alb": {}
+    },
+    "expected": {
+      "code": "INVALID_INPUT",
+      "field": "alb"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject invalid numeric true alb",
+    "input": {
+      "idade": 40,
+      "imc": 25,
+      "dm": "0",
+      "ast": 25,
+      "alt": 50,
+      "plq": 300,
+      "alb": true
+    },
+    "expected": {
+      "code": "INVALID_INPUT",
+      "field": "alb"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject below documented minimum alb",
+    "input": {
+      "idade": 40,
+      "imc": 25,
+      "dm": "0",
+      "ast": 25,
+      "alt": 50,
+      "plq": 300,
+      "alb": 0
+    },
+    "expected": {
+      "code": "OUT_OF_RANGE",
+      "field": "alb"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  },
+  {
+    "name": "Reject above documented maximum alb",
+    "input": {
+      "idade": 40,
+      "imc": 25,
+      "dm": "0",
+      "ast": 25,
+      "alt": 50,
+      "plq": 300,
+      "alb": 7
+    },
+    "expected": {
+      "code": "OUT_OF_RANGE",
+      "field": "alb"
+    },
+    "scope": "Independently constructed schema/domain refusal; code observed from the pinned adapter, no clinical oracle"
+  }
+]

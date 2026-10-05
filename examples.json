@@ -1,6 +1,18 @@
 [
   {
-    "label": "40 anos, IMC 25, sem DM, AST 25, ALT 50, plaquetas 300, albumina 4,5: −4,220 (improvável)",
+    "id": "nafld-fibrosis-score",
+    "kind": "native-source-reference",
+    "index": 0,
+    "name": "40 anos, IMC 25, sem DM, AST 25, ALT 50, plaquetas 300, albumina 4,5: −4,220 (improvável)",
+    "originalInput": {
+      "idade": 40,
+      "imc": 25,
+      "dm": "0",
+      "ast": 25,
+      "alt": 50,
+      "plq": 300,
+      "alb": 4.5
+    },
     "input": {
       "idade": 40,
       "imc": 25,
@@ -17,19 +29,39 @@
       "level": "low",
       "tol": 0.001
     },
-    "originalInput": {
-      "idade": 40,
-      "imc": 25,
-      "dm": "0",
-      "ast": 25,
-      "alt": 50,
-      "plq": 300,
-      "alb": 4.5
+    "recordedResult": {
+      "main": [
+        "-4,220",
+        ""
+      ],
+      "label": "NAFLD Fibrosis Score",
+      "raw": {
+        "nfs": -4.22
+      }
     },
-    "expandedZeroOptions": []
+    "provenance": {
+      "bank": {
+        "file": "reports/review-20261003/source-cases-audit.json",
+        "bytes": 885399,
+        "sha256": "1e609b8c90f6b7fef933d748f3ebd59836d4d06fe7b7e07ced569756091408d3"
+      },
+      "scope": "Existing recorded synthetic source expectations and source-audit transport baseline; no new independent oracle"
+    }
   },
   {
-    "label": "50 anos, IMC 30, DM, AST 40, ALT 50, plaquetas 200, albumina 4,0: −0,323 (indeterminado)",
+    "id": "nafld-fibrosis-score",
+    "kind": "native-source-reference",
+    "index": 1,
+    "name": "50 anos, IMC 30, DM, AST 40, ALT 50, plaquetas 200, albumina 4,0: −0,323 (indeterminado)",
+    "originalInput": {
+      "idade": 50,
+      "imc": 30,
+      "dm": "1",
+      "ast": 40,
+      "alt": 50,
+      "plq": 200,
+      "alb": 4
+    },
     "input": {
       "idade": 50,
       "imc": 30,
@@ -47,19 +79,39 @@
       "level": "mid",
       "tol": 0.001
     },
-    "originalInput": {
-      "idade": 50,
-      "imc": 30,
-      "dm": "1",
-      "ast": 40,
-      "alt": 50,
-      "plq": 200,
-      "alb": 4
+    "recordedResult": {
+      "main": [
+        "-0,323",
+        ""
+      ],
+      "label": "NAFLD Fibrosis Score",
+      "raw": {
+        "nfs": -0.323
+      }
     },
-    "expandedZeroOptions": []
+    "provenance": {
+      "bank": {
+        "file": "reports/review-20261003/source-cases-audit.json",
+        "bytes": 885399,
+        "sha256": "1e609b8c90f6b7fef933d748f3ebd59836d4d06fe7b7e07ced569756091408d3"
+      },
+      "scope": "Existing recorded synthetic source expectations and source-audit transport baseline; no new independent oracle"
+    }
   },
   {
-    "label": "65 anos, IMC 35, DM, AST 60, ALT 40, plaquetas 120, albumina 3,5: 2,765 (provável)",
+    "id": "nafld-fibrosis-score",
+    "kind": "native-source-reference",
+    "index": 2,
+    "name": "65 anos, IMC 35, DM, AST 60, ALT 40, plaquetas 120, albumina 3,5: 2,765 (provável)",
+    "originalInput": {
+      "idade": 65,
+      "imc": 35,
+      "dm": "1",
+      "ast": 60,
+      "alt": 40,
+      "plq": 120,
+      "alb": 3.5
+    },
     "input": {
       "idade": 65,
       "imc": 35,
@@ -76,15 +128,23 @@
       "level": "high",
       "tol": 0.001
     },
-    "originalInput": {
-      "idade": 65,
-      "imc": 35,
-      "dm": "1",
-      "ast": 60,
-      "alt": 40,
-      "plq": 120,
-      "alb": 3.5
+    "recordedResult": {
+      "main": [
+        "2,765",
+        ""
+      ],
+      "label": "NAFLD Fibrosis Score",
+      "raw": {
+        "nfs": 2.765
+      }
     },
-    "expandedZeroOptions": []
+    "provenance": {
+      "bank": {
+        "file": "reports/review-20261003/source-cases-audit.json",
+        "bytes": 885399,
+        "sha256": "1e609b8c90f6b7fef933d748f3ebd59836d4d06fe7b7e07ced569756091408d3"
+      },
+      "scope": "Existing recorded synthetic source expectations and source-audit transport baseline; no new independent oracle"
+    }
   }
 ]

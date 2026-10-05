@@ -1,0 +1,281 @@
+{
+  "id": "nafld-fibrosis-score",
+  "at": "2026-10-05T17:29:56.329Z",
+  "adapter": {
+    "file": "apps/website/private/tool-code/nafld-fibrosis-score/calculator.js",
+    "bytes": 7261,
+    "sha256": "e59d0cf9803b93948846777cf616fe7eae8446a69dbdf74255dc30724fbb61a9"
+  },
+  "cases": [
+    {
+      "name": "40 anos, IMC 25, sem DM, AST 25, ALT 50, plaquetas 300, albumina 4,5: −4,220 (improvável)",
+      "input": {
+        "idade": 40,
+        "imc": 25,
+        "dm": "0",
+        "ast": 25,
+        "alt": 50,
+        "plq": 300,
+        "alb": 4.5
+      },
+      "obtained": {
+        "id": "nafld-fibrosis-score",
+        "main": [
+          "-4,220",
+          ""
+        ],
+        "label": "NAFLD Fibrosis Score",
+        "raw": {
+          "nfs": -4.22
+        },
+        "clinicalValidation": "not-performed"
+      },
+      "checks": [
+        {
+          "at": "status",
+          "expected": 200,
+          "obtained": 200,
+          "passed": true
+        },
+        {
+          "at": "result-object",
+          "expected": true,
+          "obtained": true,
+          "passed": true
+        },
+        {
+          "at": "result.raw.nfs",
+          "expected": -4.22,
+          "obtained": -4.22,
+          "tolerance": 0.001,
+          "difference": 0,
+          "scope": "Recorded rounded source reference",
+          "passed": true
+        },
+        {
+          "at": "regression.result.raw.nfs",
+          "expected": -4.22,
+          "obtained": -4.22,
+          "tolerance": 1e-10,
+          "difference": 0,
+          "scope": "Existing precise source-audit transport regression, not independent formula validation",
+          "passed": true
+        },
+        {
+          "at": "regression.result.main.length",
+          "expected": 2,
+          "obtained": 2,
+          "scope": "Existing source-audit public representation regression",
+          "passed": true
+        },
+        {
+          "at": "regression.result.main[0]",
+          "expected": "-4,220",
+          "obtained": "-4,220",
+          "scope": "Existing source-audit public representation regression",
+          "passed": true
+        },
+        {
+          "at": "regression.result.main[1]",
+          "expected": "",
+          "obtained": "",
+          "scope": "Existing source-audit public representation regression",
+          "passed": true
+        }
+      ],
+      "notCompared": [
+        {
+          "key": "level",
+          "reason": "Historical interpretative/explanatory expectation outside the bounded API and outside clinical approval"
+        }
+      ],
+      "status": "passed"
+    },
+    {
+      "name": "50 anos, IMC 30, DM, AST 40, ALT 50, plaquetas 200, albumina 4,0: −0,323 (indeterminado)",
+      "input": {
+        "idade": 50,
+        "imc": 30,
+        "dm": "1",
+        "ast": 40,
+        "alt": 50,
+        "plq": 200,
+        "alb": 4
+      },
+      "obtained": {
+        "id": "nafld-fibrosis-score",
+        "main": [
+          "-0,323",
+          ""
+        ],
+        "label": "NAFLD Fibrosis Score",
+        "raw": {
+          "nfs": -0.323
+        },
+        "clinicalValidation": "not-performed"
+      },
+      "checks": [
+        {
+          "at": "status",
+          "expected": 200,
+          "obtained": 200,
+          "passed": true
+        },
+        {
+          "at": "result-object",
+          "expected": true,
+          "obtained": true,
+          "passed": true
+        },
+        {
+          "at": "result.main",
+          "expected": "-0,323",
+          "obtained": "-0,323",
+          "scope": "Recorded source reference",
+          "passed": true
+        },
+        {
+          "at": "result.raw.nfs",
+          "expected": -0.323,
+          "obtained": -0.323,
+          "tolerance": 0.001,
+          "difference": 0,
+          "scope": "Recorded rounded source reference",
+          "passed": true
+        },
+        {
+          "at": "regression.result.raw.nfs",
+          "expected": -0.323,
+          "obtained": -0.323,
+          "tolerance": 1e-10,
+          "difference": 0,
+          "scope": "Existing precise source-audit transport regression, not independent formula validation",
+          "passed": true
+        },
+        {
+          "at": "regression.result.main.length",
+          "expected": 2,
+          "obtained": 2,
+          "scope": "Existing source-audit public representation regression",
+          "passed": true
+        },
+        {
+          "at": "regression.result.main[0]",
+          "expected": "-0,323",
+          "obtained": "-0,323",
+          "scope": "Existing source-audit public representation regression",
+          "passed": true
+        },
+        {
+          "at": "regression.result.main[1]",
+          "expected": "",
+          "obtained": "",
+          "scope": "Existing source-audit public representation regression",
+          "passed": true
+        }
+      ],
+      "notCompared": [
+        {
+          "key": "level",
+          "reason": "Historical interpretative/explanatory expectation outside the bounded API and outside clinical approval"
+        }
+      ],
+      "status": "passed"
+    },
+    {
+      "name": "65 anos, IMC 35, DM, AST 60, ALT 40, plaquetas 120, albumina 3,5: 2,765 (provável)",
+      "input": {
+        "idade": 65,
+        "imc": 35,
+        "dm": "1",
+        "ast": 60,
+        "alt": 40,
+        "plq": 120,
+        "alb": 3.5
+      },
+      "obtained": {
+        "id": "nafld-fibrosis-score",
+        "main": [
+          "2,765",
+          ""
+        ],
+        "label": "NAFLD Fibrosis Score",
+        "raw": {
+          "nfs": 2.765
+        },
+        "clinicalValidation": "not-performed"
+      },
+      "checks": [
+        {
+          "at": "status",
+          "expected": 200,
+          "obtained": 200,
+          "passed": true
+        },
+        {
+          "at": "result-object",
+          "expected": true,
+          "obtained": true,
+          "passed": true
+        },
+        {
+          "at": "result.raw.nfs",
+          "expected": 2.765,
+          "obtained": 2.765,
+          "tolerance": 0.001,
+          "difference": 0,
+          "scope": "Recorded rounded source reference",
+          "passed": true
+        },
+        {
+          "at": "regression.result.raw.nfs",
+          "expected": 2.765,
+          "obtained": 2.765,
+          "tolerance": 1e-10,
+          "difference": 0,
+          "scope": "Existing precise source-audit transport regression, not independent formula validation",
+          "passed": true
+        },
+        {
+          "at": "regression.result.main.length",
+          "expected": 2,
+          "obtained": 2,
+          "scope": "Existing source-audit public representation regression",
+          "passed": true
+        },
+        {
+          "at": "regression.result.main[0]",
+          "expected": "2,765",
+          "obtained": "2,765",
+          "scope": "Existing source-audit public representation regression",
+          "passed": true
+        },
+        {
+          "at": "regression.result.main[1]",
+          "expected": "",
+          "obtained": "",
+          "scope": "Existing source-audit public representation regression",
+          "passed": true
+        }
+      ],
+      "notCompared": [
+        {
+          "key": "level",
+          "reason": "Historical interpretative/explanatory expectation outside the bounded API and outside clinical approval"
+        }
+      ],
+      "status": "passed"
+    }
+  ],
+  "refusals": {
+    "passed": 67,
+    "failed": 0,
+    "failures": []
+  },
+  "sourceNodeBrowserVmParity": true,
+  "actualBrowserDomVerified": false,
+  "newIndependentOracle": false,
+  "currentActualR6HttpEvidence": "pending",
+  "clinicalApproval": false,
+  "professionalLanguageApproval": false
+}
