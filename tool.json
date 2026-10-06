@@ -363,7 +363,7 @@
       "publicCandidateBankOmitted": true
     },
     "methodVersion": "NFS de Angulo et al. (2007), seis variáveis; fórmula e cortes originais conferidos na Tabela 1 de McPherson et al. (2017). Esta implementação usa o corte inferior 0,12 para idade ≥65 anos; o corte superior continua 0,676.",
-    "implementationVersion": "nafld-fibrosis-score@native-2026-10-04+e59d0cf9803b",
+    "implementationVersion": "nafld-fibrosis-score@native-2026-10-05+325fbd4c60c4",
     "currentMethodSource": "https://pubmed.ncbi.nlm.nih.gov/17393509/",
     "versionEvidence": {
       "status": "variant-and-source-edition-recorded",
@@ -708,7 +708,7 @@
       "clinicalApproval": "not-performed",
       "translationApproval": "not-performed",
       "releaseApproval": "not-performed",
-      "implementationHash": "e59d0cf9803b93948846777cf616fe7eae8446a69dbdf74255dc30724fbb61a9",
+      "implementationHash": "325fbd4c60c44db7e93654e08d9ebbd9b0af35ef74ed278104cd05a39c362e2f",
       "previousImplementationHash": "67b9d36b869ba595382716f3fcd1be4e2c14792ee8e3dc64668809e810d083f6",
       "sourceDetailsAmendment": {
         "previousMethodVersion": "NFS/Angulo 2007:6 variáveis; coeficientes originais, limiarespor idade Mc Pherson 2017",
@@ -755,7 +755,35 @@
           "sha256": "b49065d41ea20f200ab9a3488e01d7e29b4fa8c785f804a4538a605757dd8bc6"
         },
         "scope": "Published formula/units and declared cutoffs; exact35/65 clinical source ambiguity retained. Raw nearest binary64 and private strict comparison are separate technical evidence; generic API exposes score, not clinical category. Original2007 full text and professional/clinical/rights review not performed."
-      }
+      },
+      "documentedOutputContract": {
+        "fields": [
+          "level",
+          "verdict",
+          "rows",
+          "note"
+        ],
+        "scope": "Optional documented outputs already produced by the existing scientific method; no new classification or treatment decision.",
+        "sourceExposureReceipt": {
+          "file": "reports/review-20261005-completion/native-result-presentation-r1/applied-output-r1/receipt.json",
+          "sha256": "ad5471530e501b906b966463cef1eb20e9745ac745fc30fb85d3ec4db2a333c3"
+        },
+        "scientificBodiesUnchanged": true,
+        "clinicalApproval": "not-performed",
+        "professionalLanguageApproval": "not-performed"
+      },
+      "technicalBindingHistory": [
+        {
+          "recordedAt": "2026-10-05T23:55:42.176Z",
+          "scope": "Expose existing documented result fields; scientific body and complete input contract unchanged.",
+          "previousImplementationVersion": "nafld-fibrosis-score@native-2026-10-04+e59d0cf9803b",
+          "previousImplementationHash": "e59d0cf9803b93948846777cf616fe7eae8446a69dbdf74255dc30724fbb61a9",
+          "implementationHash": "325fbd4c60c44db7e93654e08d9ebbd9b0af35ef74ed278104cd05a39c362e2f",
+          "scientificBodySha256": "40ae31885384b8177405fad08133a1c51d499c883cddc48f1834dd51653b40dd",
+          "metadataContractHash": "1d7c0164ec6ebad1428a6b23b13501c5d895b0ee7b26c93e4dc8a6c04bfa90b2",
+          "exposureReceiptSha256": "ad5471530e501b906b966463cef1eb20e9745ac745fc30fb85d3ec4db2a333c3"
+        }
+      ]
     },
     "limits": "O modelo original foi derivado de NAFLD confirmada por biópsia, não de toda população hoje denominada MASLD. McPherson (2017) avaliou serviços especializados europeus, excluiu outras hepatopatias e consumo excessivo de álcool e encontrou desempenho fraco em pessoas ≤35 anos. A Figura 4 e sua legenda divergem nas fronteiras de 35 e 65 anos; essas idades exatas não receberam adjudicação clínica aqui. O limiar inferior de 0,12 para idade ≥65 é a política declarada desta implementação. Plaquetas ×10³/mm³ equivalem numericamente a ×10⁹/L; albumina deve estar em g/dL. O escore é exibido com três casas decimais; a classificação usa os limites estritos sem arredondar o escore. Valores intermediários são inconclusivos; o NFS isolado não confirma F3–F4. Revisão clínica e de idiomas por profissionais independentes não realizada.",
     "sourceLimitEvidence": {
@@ -774,20 +802,20 @@
   },
   "currentSource": {
     "file": "apps/website/private/tool-code/nafld-fibrosis-score/calculator.js",
-    "bytes": 7261,
-    "sha256": "e59d0cf9803b93948846777cf616fe7eae8446a69dbdf74255dc30724fbb61a9"
+    "bytes": 7466,
+    "sha256": "325fbd4c60c44db7e93654e08d9ebbd9b0af35ef74ed278104cd05a39c362e2f"
   },
-  "sourceToolSha256": "22727ca5c192418e5fba1128140b09035e2fe47e3f4d46daf1b0a521ef2e4a88",
+  "sourceToolSha256": "fd854f04fb897b87d8f82b8919c4827df68e83a435d85e7decd88b3528dc6153",
   "omittedFullReferenceBanks": [
     {
       "rows": 4,
       "sha256": "0d2d743f4babf85a6803cc7664739ea6d577aae6f5e9f18934e9d499f5da007b",
-      "reason": "Large independent reference bank not bundled; exact evidence scope and file references retained"
+      "reason": "Large independent reference bank not bundled; historical proof scope retained"
     },
     {
       "rows": 4,
       "sha256": "0d2d743f4babf85a6803cc7664739ea6d577aae6f5e9f18934e9d499f5da007b",
-      "reason": "Large independent reference bank not bundled; exact evidence scope and file references retained"
+      "reason": "Large independent reference bank not bundled; historical proof scope retained"
     }
   ],
   "clinicalApproval": "not-performed",

@@ -1,6 +1,6 @@
 {
   "id": "nafld-fibrosis-score",
-  "scope": "Exclusive report-owned R6-HTTP-linked candidate, read-only default test",
+  "scope": "Immutable package integrity; tests write no files",
   "files": [
     {
       "path": ".gitattributes",
@@ -24,8 +24,8 @@
     },
     {
       "path": "calculator.browser.js",
-      "bytes": 7261,
-      "sha256": "e59d0cf9803b93948846777cf616fe7eae8446a69dbdf74255dc30724fbb61a9"
+      "bytes": 7466,
+      "sha256": "325fbd4c60c44db7e93654e08d9ebbd9b0af35ef74ed278104cd05a39c362e2f"
     },
     {
       "path": "calculator.js",
@@ -39,8 +39,8 @@
     },
     {
       "path": "CODE-COMPONENTS.md",
-      "bytes": 1105,
-      "sha256": "fd9cf217171b529e49b1ddbb50d01d1194de1a93e119440c84e8a069d90ba2ec"
+      "bytes": 1374,
+      "sha256": "cacc8c174fb7c770d98072a83aef31c9acd2c320e056b656bed46bd44fe62ffb"
     },
     {
       "path": "CONTRIBUTING.md",
@@ -49,68 +49,78 @@
     },
     {
       "path": "demo-runtime.js",
-      "bytes": 11656,
-      "sha256": "734da1ceff19b961423e1bb5d2c9eaafd18920b32cc4f331856f6065c9cfd2c9"
+      "bytes": 14286,
+      "sha256": "187cb0a3f2693707660f7fc69fc63ce5e30055a5ccdc621cc7945a0d3b1d2918"
     },
     {
       "path": "documentation/ar.md",
-      "bytes": 5228,
-      "sha256": "9f7377e9c6c735144c702b4f43146f10a608b691e1b1b2dfcdcd4044b77d89a9"
+      "bytes": 5760,
+      "sha256": "43a4c122919643a16434da1ab48114f0328c1a05e892775d82e85ea98442034d"
     },
     {
       "path": "documentation/de.md",
-      "bytes": 4513,
-      "sha256": "112a9d228122a33d75cf9a43c99bd72b64242bf75eb85c19e1d83d529826e8df"
+      "bytes": 4946,
+      "sha256": "d3dcf09c85d270135915534c6ba5f0865b9ab8e8c958f5ac67fd1b2387b1d03b"
     },
     {
       "path": "documentation/en.md",
-      "bytes": 3922,
-      "sha256": "b250c2324694d6cf41bf4a31ad0a2e057da7b4075b61b9357b0ad718d1f3a58e"
+      "bytes": 4298,
+      "sha256": "70897df6748fc38d344347e6dbcd859114324edaf3f5528c330b47e2c97b00d5"
     },
     {
       "path": "documentation/es.md",
-      "bytes": 4350,
-      "sha256": "69be8927bc0f8baef850c59c7232325f06f51db2906d1c1b88fb1e9acc39c9c5"
+      "bytes": 4767,
+      "sha256": "9c6d0b84d90ec937fd7c54e5e0e06c30476c0e513f867b00496365bc00e98a6a"
     },
     {
       "path": "documentation/fr.md",
-      "bytes": 4584,
-      "sha256": "eb6c9be0b65207ffb5013e5c8eeef544ae08265b88e968f0b3d3ab29a7a5a1e5"
+      "bytes": 5016,
+      "sha256": "e0f79c7b09ce35877ff7c9a281b157133d900d114e61ee5899e9bf25c5e49b1e"
     },
     {
       "path": "documentation/hi.md",
-      "bytes": 7373,
-      "sha256": "cefae222c90b484c168aa15a73b3d3c141ba41d4d6edab3927bc2d8b430ada1c"
+      "bytes": 8241,
+      "sha256": "e15b2443ca5ca884f1656539b4665d633c5ad012ea64d308d1cd4dbccdb2ba62"
     },
     {
       "path": "documentation/it.md",
-      "bytes": 4298,
-      "sha256": "f3984d71c8d1efec1d7eb8821f0a06fecf4f7a4caaadaf73f27437d0e856f3be"
+      "bytes": 4697,
+      "sha256": "de8911ee9911ac53fa0c53d23548f8f2a88203718455cd30ed0399abe428944a"
     },
     {
       "path": "documentation/ja.md",
-      "bytes": 4434,
-      "sha256": "2bef450a03efa8bc190739bbfed27dd27758e125b02009370187804d61f2e7eb"
+      "bytes": 4905,
+      "sha256": "decf5c3400f421f81acdcf275ca6701c50791fb889b8198ddb29484519283266"
     },
     {
       "path": "documentation/pt-BR.md",
-      "bytes": 4013,
-      "sha256": "b71e07a16c4994e03870aa267ccdd5512d5edc9011f94679b059683bc49f7055"
+      "bytes": 4407,
+      "sha256": "1cc7e7e9b9e306aeb30a0660a7fb653c821d5c1d033961ba94b62e6a913ca0fa"
     },
     {
       "path": "documentation/zh.md",
-      "bytes": 3482,
-      "sha256": "20bfee5a3c9c82ed2a04c24662e421ff63e048b98e23f71fefac1ce8911bad2a"
+      "bytes": 3826,
+      "sha256": "a81a4a99a3608f58093738a7580e5167a9794908e905896c79052090fd0c1f84"
+    },
+    {
+      "path": "documented-result-examples.json",
+      "bytes": 15067,
+      "sha256": "6cb58070ff8cc07dd7f442912a9138944454d7f64aec3e796eb89bed9e926a8a"
     },
     {
       "path": "engine/tool-code/nafld-fibrosis-score/calculator.js",
-      "bytes": 7261,
-      "sha256": "e59d0cf9803b93948846777cf616fe7eae8446a69dbdf74255dc30724fbb61a9"
+      "bytes": 7466,
+      "sha256": "325fbd4c60c44db7e93654e08d9ebbd9b0af35ef74ed278104cd05a39c362e2f"
     },
     {
       "path": "evidence/publication-base-reference.json",
       "bytes": 2817,
       "sha256": "5b4df31e2356d1f5a2d8ad47cc1a5c2d295693cb9e9122000f84bdd7177c914f"
+    },
+    {
+      "path": "evidence/publication-provenance-before-output-contract.json",
+      "bytes": 12459,
+      "sha256": "cdb730f60bf32504a6c9c0c5191d8b06b7355385e6974209db29950d875b168e"
     },
     {
       "path": "evidence/served-http-r6.json",
@@ -134,8 +144,8 @@
     },
     {
       "path": "localization.js",
-      "bytes": 54847,
-      "sha256": "bc80f0379d56e7ff441f74d1b24e486e618a1d8e94e2012c4cc6c0928a6d9997"
+      "bytes": 63597,
+      "sha256": "105e861ba5acf250f0e6fc6c60dde211b0c2c33011d582dd68ab54089f15d348"
     },
     {
       "path": "METHOD-CODE-LICENSE.txt",
@@ -154,23 +164,23 @@
     },
     {
       "path": "package.json",
-      "bytes": 383,
-      "sha256": "8a0a173cd09e239e8f8738085bccce64d8200df3f197ea798a76debbc9381cea"
+      "bytes": 477,
+      "sha256": "98732602de2f5f54c480b3f91633e783712f320e9245cb9282e20b236ed706c5"
     },
     {
       "path": "portal-formatters.browser.js",
-      "bytes": 31300,
-      "sha256": "d8522ffe0b858012dfd25e5e8d10fe2eefec977f2bdb612be5cbadf5c4bed9f3"
+      "bytes": 38687,
+      "sha256": "cf0668f6fd44a80a3e4064915cf2da02d2203a9596bd39a9a0a6025fb12e17f4"
     },
     {
       "path": "publication-provenance.json",
-      "bytes": 12459,
-      "sha256": "cdb730f60bf32504a6c9c0c5191d8b06b7355385e6974209db29950d875b168e"
+      "bytes": 6523,
+      "sha256": "c07626c2afd96411c1e90a2af9d7390ba8ccca5021ce38dd534b3fbcfa3fe4e6"
     },
     {
       "path": "README.md",
-      "bytes": 3295,
-      "sha256": "6e2080dfb733f34bf23a624fb9e4e5c2ad01be3e0fa3049f8a06290ad6f9e7d0"
+      "bytes": 3881,
+      "sha256": "de52c27221c4104b7862713eaf57ed3e4cc66e2cd0452eb32f8a54ddf3edfc04"
     },
     {
       "path": "rejections.json",
@@ -188,9 +198,24 @@
       "sha256": "3c20d46e436116be0c673f0260b24bbc2193fafbd15fb4659bf0e545b452487e"
     },
     {
+      "path": "source-result-contract.json",
+      "bytes": 5059,
+      "sha256": "89282ae101aeef3bae78a955c8088dcd429c73cf2f4851954272774f0d93e75c"
+    },
+    {
       "path": "SOURCE-RIGHTS-REVIEW.md",
       "bytes": 2041,
       "sha256": "f3f74875d1e305cf3a4ed69ed62efae142a4089d409874e4ee54e7c017b5192d"
+    },
+    {
+      "path": "test-presentation-contract.cjs",
+      "bytes": 1923,
+      "sha256": "a4a1734ea3d00c17ffeed7abbd605663459b7c190b695d2396cc58da93215cec"
+    },
+    {
+      "path": "test-source-result-contract.cjs",
+      "bytes": 1416,
+      "sha256": "cbadaf0576ecc2884c7523902880d2068e3a9b6b63df418359ab42219af2e386"
     },
     {
       "path": "test.cjs",
@@ -199,8 +224,8 @@
     },
     {
       "path": "tool.json",
-      "bytes": 44590,
-      "sha256": "be2002b52ca90b5cc77bf77837522594979d151019e7adea95bb88cda0cbe07d"
+      "bytes": 46091,
+      "sha256": "2737bdee2c0603854853ffd221d4e55311e1400e7ebad94d7aa4f28dd848e0fc"
     }
   ]
 }

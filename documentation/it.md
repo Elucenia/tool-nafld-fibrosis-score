@@ -98,3 +98,24 @@ Risultato della formula o classificazione. Interpretazione, condotta e applicabi
 Apache-2.0 si applica solo al codice di ELUCENIA. I diritti su strumenti, pubblicazioni, traduzioni e dati restano ai rispettivi titolari. Conservi LICENSE e NOTICE.
 
 ELUCENIA · Felipe Guedes · Copyright © 2026
+
+## Risultati documentati
+
+Le informazioni seguenti conservano gli output del metodo per esempi sintetici. Non costituiscono una validazione clinica indipendente.
+
+### 1
+
+Fibrosi avanzata (F3–F4) improbabile
+
+
+### 2
+
+Risultato indeterminato: integrare con elastografia
+
+
+### 3
+
+Fibrosi avanzata (F3–F4) probabile
+
+A partire da 65 anni, il cut-off inferiore utilizzato è 0,12 (McPherson 2017).
+

@@ -98,3 +98,24 @@ Formula or classification result. Interpretation, care and applicability depend 
 Apache-2.0 applies only to ELUCENIA code. Rights to instruments, publications, translations and data remain with their respective holders. Preserve LICENSE and NOTICE.
 
 ELUCENIA · Felipe Guedes · Copyright © 2026
+
+## Documented results
+
+The information below preserves the method outputs for synthetic examples. It does not constitute independent clinical validation.
+
+### 1
+
+Advanced fibrosis (F3–F4) unlikely
+
+
+### 2
+
+Indeterminate result: complement with elastography
+
+
+### 3
+
+Advanced fibrosis (F3–F4) likely
+
+From 65 years of age, the lower cutoff used is 0,12 (McPherson 2017).
+

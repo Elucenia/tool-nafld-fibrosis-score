@@ -98,3 +98,24 @@ Resultado de la fórmula o clasificación. La interpretación, la conducta y la 
 Apache-2.0 se aplica únicamente al código de ELUCENIA. Los derechos de los instrumentos, publicaciones, traducciones y datos permanecen en manos de sus respectivos titulares. Conserve LICENSE y NOTICE.
 
 ELUCENIA · Felipe Guedes · Copyright © 2026
+
+## Resultados documentados
+
+La información siguiente conserva las salidas del método para ejemplos sintéticos. No constituye una validación clínica independiente.
+
+### 1
+
+Fibrosis avanzada (F3–F4) poco probable
+
+
+### 2
+
+Resultado indeterminado: complementar con elastografía
+
+
+### 3
+
+Fibrosis avanzada (F3–F4) probable
+
+A partir de los 65 años, el punto de corte inferior usado es 0,12 (McPherson 2017).
+

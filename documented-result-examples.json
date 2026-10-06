@@ -1,0 +1,437 @@
+{
+  "id": "nafld-fibrosis-score",
+  "implementationVersion": "nafld-fibrosis-score@native-2026-10-05+325fbd4c60c4",
+  "scope": "Rendered current output against the same source method; not an independent numerical/clinical oracle",
+  "locales": {
+    "pt-BR": [
+      {
+        "name": "40 anos, IMC 25, sem DM, AST 25, ALT 50, plaquetas 300, albumina 4,5: −4,220 (improvável)",
+        "output": {
+          "rows": [],
+          "verdict": {
+            "text": "Fibrose avançada (F3–F4) improvável",
+            "locale": "pt-BR",
+            "template": "documented-source"
+          },
+          "level": "low"
+        }
+      },
+      {
+        "name": "50 anos, IMC 30, DM, AST 40, ALT 50, plaquetas 200, albumina 4,0: −0,323 (indeterminado)",
+        "output": {
+          "rows": [],
+          "verdict": {
+            "text": "Resultado indeterminado: complementar com elastografia",
+            "locale": "pt-BR",
+            "template": "documented-source"
+          },
+          "level": "mid"
+        }
+      },
+      {
+        "name": "65 anos, IMC 35, DM, AST 60, ALT 40, plaquetas 120, albumina 3,5: 2,765 (provável)",
+        "output": {
+          "rows": [],
+          "verdict": {
+            "text": "Fibrose avançada (F3–F4) provável",
+            "locale": "pt-BR",
+            "template": "documented-source"
+          },
+          "note": {
+            "text": "A partir de 65 anos, o corte inferior usado é 0,12 (McPherson 2017).",
+            "locale": "pt-BR",
+            "template": "documented-source"
+          },
+          "level": "high"
+        }
+      }
+    ],
+    "en": [
+      {
+        "name": "40 anos, IMC 25, sem DM, AST 25, ALT 50, plaquetas 300, albumina 4,5: −4,220 (improvável)",
+        "output": {
+          "rows": [],
+          "verdict": {
+            "text": "Advanced fibrosis (F3–F4) unlikely",
+            "locale": "en",
+            "template": "documented-authored-def6a6cc82a5b0ee6b0d"
+          },
+          "level": "low"
+        }
+      },
+      {
+        "name": "50 anos, IMC 30, DM, AST 40, ALT 50, plaquetas 200, albumina 4,0: −0,323 (indeterminado)",
+        "output": {
+          "rows": [],
+          "verdict": {
+            "text": "Indeterminate result: complement with elastography",
+            "locale": "en",
+            "template": "documented-authored-db3b0ead54d32c734597"
+          },
+          "level": "mid"
+        }
+      },
+      {
+        "name": "65 anos, IMC 35, DM, AST 60, ALT 40, plaquetas 120, albumina 3,5: 2,765 (provável)",
+        "output": {
+          "rows": [],
+          "verdict": {
+            "text": "Advanced fibrosis (F3–F4) likely",
+            "locale": "en",
+            "template": "documented-authored-13bd258cf7cc3927cd57"
+          },
+          "note": {
+            "text": "From 65 years of age, the lower cutoff used is 0,12 (McPherson 2017).",
+            "locale": "en",
+            "template": "documented-authored-8c07c847deb0b87be508"
+          },
+          "level": "high"
+        }
+      }
+    ],
+    "es": [
+      {
+        "name": "40 anos, IMC 25, sem DM, AST 25, ALT 50, plaquetas 300, albumina 4,5: −4,220 (improvável)",
+        "output": {
+          "rows": [],
+          "verdict": {
+            "text": "Fibrosis avanzada (F3–F4) poco probable",
+            "locale": "es",
+            "template": "documented-authored-def6a6cc82a5b0ee6b0d"
+          },
+          "level": "low"
+        }
+      },
+      {
+        "name": "50 anos, IMC 30, DM, AST 40, ALT 50, plaquetas 200, albumina 4,0: −0,323 (indeterminado)",
+        "output": {
+          "rows": [],
+          "verdict": {
+            "text": "Resultado indeterminado: complementar con elastografía",
+            "locale": "es",
+            "template": "documented-authored-db3b0ead54d32c734597"
+          },
+          "level": "mid"
+        }
+      },
+      {
+        "name": "65 anos, IMC 35, DM, AST 60, ALT 40, plaquetas 120, albumina 3,5: 2,765 (provável)",
+        "output": {
+          "rows": [],
+          "verdict": {
+            "text": "Fibrosis avanzada (F3–F4) probable",
+            "locale": "es",
+            "template": "documented-authored-13bd258cf7cc3927cd57"
+          },
+          "note": {
+            "text": "A partir de los 65 años, el punto de corte inferior usado es 0,12 (McPherson 2017).",
+            "locale": "es",
+            "template": "documented-authored-8c07c847deb0b87be508"
+          },
+          "level": "high"
+        }
+      }
+    ],
+    "fr": [
+      {
+        "name": "40 anos, IMC 25, sem DM, AST 25, ALT 50, plaquetas 300, albumina 4,5: −4,220 (improvável)",
+        "output": {
+          "rows": [],
+          "verdict": {
+            "text": "Fibrose avancée (F3–F4) peu probable",
+            "locale": "fr",
+            "template": "documented-authored-def6a6cc82a5b0ee6b0d"
+          },
+          "level": "low"
+        }
+      },
+      {
+        "name": "50 anos, IMC 30, DM, AST 40, ALT 50, plaquetas 200, albumina 4,0: −0,323 (indeterminado)",
+        "output": {
+          "rows": [],
+          "verdict": {
+            "text": "Résultat indéterminé : compléter par une élastographie",
+            "locale": "fr",
+            "template": "documented-authored-db3b0ead54d32c734597"
+          },
+          "level": "mid"
+        }
+      },
+      {
+        "name": "65 anos, IMC 35, DM, AST 60, ALT 40, plaquetas 120, albumina 3,5: 2,765 (provável)",
+        "output": {
+          "rows": [],
+          "verdict": {
+            "text": "Fibrose avancée (F3–F4) probable",
+            "locale": "fr",
+            "template": "documented-authored-13bd258cf7cc3927cd57"
+          },
+          "note": {
+            "text": "À partir de 65 ans, le seuil inférieur utilisé est 0,12 (McPherson 2017).",
+            "locale": "fr",
+            "template": "documented-authored-8c07c847deb0b87be508"
+          },
+          "level": "high"
+        }
+      }
+    ],
+    "de": [
+      {
+        "name": "40 anos, IMC 25, sem DM, AST 25, ALT 50, plaquetas 300, albumina 4,5: −4,220 (improvável)",
+        "output": {
+          "rows": [],
+          "verdict": {
+            "text": "Fortgeschrittene Fibrose (F3–F4) unwahrscheinlich",
+            "locale": "de",
+            "template": "documented-authored-def6a6cc82a5b0ee6b0d"
+          },
+          "level": "low"
+        }
+      },
+      {
+        "name": "50 anos, IMC 30, DM, AST 40, ALT 50, plaquetas 200, albumina 4,0: −0,323 (indeterminado)",
+        "output": {
+          "rows": [],
+          "verdict": {
+            "text": "Unbestimmtes Ergebnis: durch Elastographie ergänzen",
+            "locale": "de",
+            "template": "documented-authored-db3b0ead54d32c734597"
+          },
+          "level": "mid"
+        }
+      },
+      {
+        "name": "65 anos, IMC 35, DM, AST 60, ALT 40, plaquetas 120, albumina 3,5: 2,765 (provável)",
+        "output": {
+          "rows": [],
+          "verdict": {
+            "text": "Fortgeschrittene Fibrose (F3–F4) wahrscheinlich",
+            "locale": "de",
+            "template": "documented-authored-13bd258cf7cc3927cd57"
+          },
+          "note": {
+            "text": "Ab 65 Jahren beträgt der verwendete untere Grenzwert 0,12 (McPherson 2017).",
+            "locale": "de",
+            "template": "documented-authored-8c07c847deb0b87be508"
+          },
+          "level": "high"
+        }
+      }
+    ],
+    "it": [
+      {
+        "name": "40 anos, IMC 25, sem DM, AST 25, ALT 50, plaquetas 300, albumina 4,5: −4,220 (improvável)",
+        "output": {
+          "rows": [],
+          "verdict": {
+            "text": "Fibrosi avanzata (F3–F4) improbabile",
+            "locale": "it",
+            "template": "documented-authored-def6a6cc82a5b0ee6b0d"
+          },
+          "level": "low"
+        }
+      },
+      {
+        "name": "50 anos, IMC 30, DM, AST 40, ALT 50, plaquetas 200, albumina 4,0: −0,323 (indeterminado)",
+        "output": {
+          "rows": [],
+          "verdict": {
+            "text": "Risultato indeterminato: integrare con elastografia",
+            "locale": "it",
+            "template": "documented-authored-db3b0ead54d32c734597"
+          },
+          "level": "mid"
+        }
+      },
+      {
+        "name": "65 anos, IMC 35, DM, AST 60, ALT 40, plaquetas 120, albumina 3,5: 2,765 (provável)",
+        "output": {
+          "rows": [],
+          "verdict": {
+            "text": "Fibrosi avanzata (F3–F4) probabile",
+            "locale": "it",
+            "template": "documented-authored-13bd258cf7cc3927cd57"
+          },
+          "note": {
+            "text": "A partire da 65 anni, il cut-off inferiore utilizzato è 0,12 (McPherson 2017).",
+            "locale": "it",
+            "template": "documented-authored-8c07c847deb0b87be508"
+          },
+          "level": "high"
+        }
+      }
+    ],
+    "ar": [
+      {
+        "name": "40 anos, IMC 25, sem DM, AST 25, ALT 50, plaquetas 300, albumina 4,5: −4,220 (improvável)",
+        "output": {
+          "rows": [],
+          "verdict": {
+            "text": "التليف المتقدم (F3–F4) غير مرجح",
+            "locale": "ar",
+            "template": "documented-authored-def6a6cc82a5b0ee6b0d"
+          },
+          "level": "low"
+        }
+      },
+      {
+        "name": "50 anos, IMC 30, DM, AST 40, ALT 50, plaquetas 200, albumina 4,0: −0,323 (indeterminado)",
+        "output": {
+          "rows": [],
+          "verdict": {
+            "text": "نتيجة غير حاسمة: استكملها بالتصوير المرن",
+            "locale": "ar",
+            "template": "documented-authored-db3b0ead54d32c734597"
+          },
+          "level": "mid"
+        }
+      },
+      {
+        "name": "65 anos, IMC 35, DM, AST 60, ALT 40, plaquetas 120, albumina 3,5: 2,765 (provável)",
+        "output": {
+          "rows": [],
+          "verdict": {
+            "text": "التليف المتقدم (F3–F4) مرجح",
+            "locale": "ar",
+            "template": "documented-authored-13bd258cf7cc3927cd57"
+          },
+          "note": {
+            "text": "ابتداءً من سن 65 عامًا، تكون العتبة الدنيا المستخدمة 0,12 (McPherson 2017).",
+            "locale": "ar",
+            "template": "documented-authored-8c07c847deb0b87be508"
+          },
+          "level": "high"
+        }
+      }
+    ],
+    "zh": [
+      {
+        "name": "40 anos, IMC 25, sem DM, AST 25, ALT 50, plaquetas 300, albumina 4,5: −4,220 (improvável)",
+        "output": {
+          "rows": [],
+          "verdict": {
+            "text": "进展期纤维化（F3–F4）不太可能",
+            "locale": "zh",
+            "template": "documented-authored-def6a6cc82a5b0ee6b0d"
+          },
+          "level": "low"
+        }
+      },
+      {
+        "name": "50 anos, IMC 30, DM, AST 40, ALT 50, plaquetas 200, albumina 4,0: −0,323 (indeterminado)",
+        "output": {
+          "rows": [],
+          "verdict": {
+            "text": "结果不确定：请结合弹性成像补充评估",
+            "locale": "zh",
+            "template": "documented-authored-db3b0ead54d32c734597"
+          },
+          "level": "mid"
+        }
+      },
+      {
+        "name": "65 anos, IMC 35, DM, AST 60, ALT 40, plaquetas 120, albumina 3,5: 2,765 (provável)",
+        "output": {
+          "rows": [],
+          "verdict": {
+            "text": "进展期纤维化（F3–F4）可能",
+            "locale": "zh",
+            "template": "documented-authored-13bd258cf7cc3927cd57"
+          },
+          "note": {
+            "text": "从65岁起，所使用的下限切点为 0,12（McPherson 2017）。",
+            "locale": "zh",
+            "template": "documented-authored-8c07c847deb0b87be508"
+          },
+          "level": "high"
+        }
+      }
+    ],
+    "ja": [
+      {
+        "name": "40 anos, IMC 25, sem DM, AST 25, ALT 50, plaquetas 300, albumina 4,5: −4,220 (improvável)",
+        "output": {
+          "rows": [],
+          "verdict": {
+            "text": "進行した線維化（F3–F4）の可能性は低い",
+            "locale": "ja",
+            "template": "documented-authored-def6a6cc82a5b0ee6b0d"
+          },
+          "level": "low"
+        }
+      },
+      {
+        "name": "50 anos, IMC 30, DM, AST 40, ALT 50, plaquetas 200, albumina 4,0: −0,323 (indeterminado)",
+        "output": {
+          "rows": [],
+          "verdict": {
+            "text": "判定不能：エラストグラフィを追加する",
+            "locale": "ja",
+            "template": "documented-authored-db3b0ead54d32c734597"
+          },
+          "level": "mid"
+        }
+      },
+      {
+        "name": "65 anos, IMC 35, DM, AST 60, ALT 40, plaquetas 120, albumina 3,5: 2,765 (provável)",
+        "output": {
+          "rows": [],
+          "verdict": {
+            "text": "進行した線維化（F3–F4）の可能性が高い",
+            "locale": "ja",
+            "template": "documented-authored-13bd258cf7cc3927cd57"
+          },
+          "note": {
+            "text": "65歳以上では、使用する下限カットオフは 0,12 である（McPherson 2017）。",
+            "locale": "ja",
+            "template": "documented-authored-8c07c847deb0b87be508"
+          },
+          "level": "high"
+        }
+      }
+    ],
+    "hi": [
+      {
+        "name": "40 anos, IMC 25, sem DM, AST 25, ALT 50, plaquetas 300, albumina 4,5: −4,220 (improvável)",
+        "output": {
+          "rows": [],
+          "verdict": {
+            "text": "उन्नत फाइब्रोसिस (F3–F4) की संभावना कम है",
+            "locale": "hi",
+            "template": "documented-authored-def6a6cc82a5b0ee6b0d"
+          },
+          "level": "low"
+        }
+      },
+      {
+        "name": "50 anos, IMC 30, DM, AST 40, ALT 50, plaquetas 200, albumina 4,0: −0,323 (indeterminado)",
+        "output": {
+          "rows": [],
+          "verdict": {
+            "text": "अनिर्धारित परिणाम: इलास्टोग्राफी से पूरक करें",
+            "locale": "hi",
+            "template": "documented-authored-db3b0ead54d32c734597"
+          },
+          "level": "mid"
+        }
+      },
+      {
+        "name": "65 anos, IMC 35, DM, AST 60, ALT 40, plaquetas 120, albumina 3,5: 2,765 (provável)",
+        "output": {
+          "rows": [],
+          "verdict": {
+            "text": "उन्नत फाइब्रोसिस (F3–F4) की संभावना है",
+            "locale": "hi",
+            "template": "documented-authored-13bd258cf7cc3927cd57"
+          },
+          "note": {
+            "text": "65 वर्ष की आयु से, उपयोग किया जाने वाला निचला कटऑफ 0,12 है (McPherson 2017)।",
+            "locale": "hi",
+            "template": "documented-authored-8c07c847deb0b87be508"
+          },
+          "level": "high"
+        }
+      }
+    ]
+  }
+}
